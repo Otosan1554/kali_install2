@@ -5,6 +5,15 @@ read -p "アンチウィルスを停止しましたか？"
 mkdir /root/tools
 mkdir /root/www
 
+mv /root/kali_conf/cplc.sh /root/tools
+mv /root/kali_conf/vulnscan.sh /root/tools
+mv /root/kali_conf/tcpscan.sh /root/tools
+mv /root/kali_conf/udpscan.sh /root/tools
+mv /root/kali_conf/mount.sh /root/tools
+mv /root/kali_conf/srccopy.sh /root/tools
+
+echo "export PATH=$PATH:/root/tools" >> /root/.bashrc
+
 echo "ソースリストの更新"
 sudo apt -y update 
 
