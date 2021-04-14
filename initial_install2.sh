@@ -13,6 +13,7 @@ mv /root/kali_conf/mount.sh /root/tools
 mv /root/kali_conf/srccopy.sh /root/tools
 
 echo "export PATH=$PATH:/root/tools" >> /root/.bashrc
+echo "export PATH=$PATH:/root/tools" >> /root/.zshrc
 
 echo "ソースリストの更新"
 sudo apt -y update 
