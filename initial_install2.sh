@@ -155,9 +155,13 @@ apt install ffuf
 echo "terminaorの導入"
 apt install terminator
 
+echo "LinPEASの導入"
 cd /root/tools
 wget https://raw.githubusercontent.com/carlospolop/privilege-escalation-awesome-scripts-suite/master/linPEAS/linpeas.sh
 chmod 777 linpeas.sh
+
+echo "gunzip rockyou.txt"
+gunzip /usr/share/wordlists/rockyou.txt.gz
 
 echo "次のブラウザアドオンを導入します"
 echo "Web Developerアドオン"
