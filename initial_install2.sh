@@ -156,7 +156,7 @@ echo "terminaorの導入"
 apt install terminator
 
 cd /root/tools
-wget https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/blob/master/linPEAS/linpeas.sh
+wget https://raw.githubusercontent.com/carlospolop/privilege-escalation-awesome-scripts-suite/master/linPEAS/linpeas.sh
 chmod 777 linpeas.sh
 
 echo "次のブラウザアドオンを導入します"
