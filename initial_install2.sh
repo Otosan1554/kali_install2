@@ -165,6 +165,11 @@ cd /root/tools
 wget https://raw.githubusercontent.com/diego-treitos/linux-smart-enumeration/master/lse.sh    
 chmod 777 lse.sh
 
+echo "Linenumの導入"
+cd /root/tools
+wget https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh  
+chmod 777 lse.sh
+
 echo "gunzip rockyou.txt"
 gunzip /usr/share/wordlists/rockyou.txt.gz
 
