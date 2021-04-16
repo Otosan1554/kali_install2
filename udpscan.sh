@@ -21,7 +21,7 @@ fi
 rm -R /root/Lab/$IP/Scan
 mkdir /root/Lab/$IP/Scan
 
-nmap -n -Pn -sU -v --max-scan-delay 0.1 --max-retries 2 --version-intensity 0 -oN /root/Lab/$IP/UDP_Portscan $IP
+nmap -n -Pn -sU -v --max-scan-delay 0.1 --max-retries 2 --version-intensity 0 -oN /root/Lab/$IP/UDP_Portscan.nmap $IP
 a=""
 for x in $(grep "/udp" /root/Lab/$IP/UDP_Portscan.nmap | cut -d "/" -f 1); do
 	a=$a","$x
