@@ -53,6 +53,7 @@ fi
 
 if [ -e /root/Lab/$IP/sandbox/$exploit_name.exe ]; then
    echo "Compile Completed"
+   file /root/Lab/$IP/sandbox/$exploit_name.exe
 else
    echo "Compile Error"
 fi
