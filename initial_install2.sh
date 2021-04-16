@@ -160,6 +160,11 @@ cd /root/tools
 wget https://raw.githubusercontent.com/carlospolop/privilege-escalation-awesome-scripts-suite/master/linPEAS/linpeas.sh
 chmod 777 linpeas.sh
 
+echo "Linux Smart Enumeration Toolの導入"
+cd /root/tools
+wget https://raw.githubusercontent.com/diego-treitos/linux-smart-enumeration/master/lse.sh    
+chmod 777 lse.sh
+
 echo "gunzip rockyou.txt"
 gunzip /usr/share/wordlists/rockyou.txt.gz
 
