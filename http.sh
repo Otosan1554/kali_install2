@@ -1,27 +1,66 @@
 #!/usr/bin/bash
 IP=$1
-smbflag=0
+smbflag="o"
 
 if [ $# -ne 1 ]; then
   echo "指定された引数は$#個です。"
   exit 1
 fi
 
-rm -R /root/Lab/$IP/Scan/
-mkdir /root/Lab/$IP/Scan
-
 grep tcp /root/Lab/$IP/TCP_sV.nmap | grep open
 grep udp /root/Lab/$IP/UDP_sV.nmap | grep open
+proto="x"
+port="x"
 
 rm tempshell.sh
 touch tempshell.sh
 echo "#!/usr/bin/bash" > tempshell.sh
 
-read -p "port= " port
-read -p "Protocol= " proto
+echo "rm -R /root/Lab/$IP/Scan/" >> tempshell.sh
+echo "mkdir /root/Lab/$IP/Scan" >> tempshell.sh
 
 while [ "$proto" != "" -a "port" != "" ]
 do
+
+   read -p "port= " port
+   read -p "Protocol= " proto
+
+   if [ "$proto" = "RDP" -o "$proto" = "rdp" ]; then
+      script1="nmap -vv --reason -Pn -sV -p $port "
+      script2='--script="banner,(rdp* or ssl*) and not (brute or broadcast or dos or external or fuzzer)"  -oN /root/Lab/'
+      script3="$IP/Scan/tcp_"$port
+      script4="_rdp_nmap.txt "$IP
+      script=$script1$script2$script3$script4
+      echo $script
+      echo $script >> tempshell.sh
+
+      script1="sslscan --show-certificate --no-colour "$IP":"$port" 2>&1 | sudo tee "
+      script2='"/root/Lab/'$IP
+      script3="/Scan/tcp_"$port
+      script4='_sslscan.txt"'
+      script=$script1$script2$script3$script4
+      echo $script
+      echo $script >>tempshell.sh
+   fi
+
+
+   if [ "$proto" = "MSRPC" -o "$proto" = "msrpc" ]; then
+      script1="nmap -vv --reason -Pn -sV -p $port "
+      script2='--script="banner,msrpc-enum,rpc-grind,rpcinfo"  -oN /root/Lab/'
+      script3="$IP/Scan/tcp_"$port
+      script4="_rpc_nmap.txt "$IP
+      script=$script1$script2$script3$script4
+      echo $script
+      echo $script >> tempshell.sh
+
+      script1="sslscan --show-certificate --no-colour "$IP":"$port" 2>&1 | sudo tee "
+      script2='"/root/Lab/'$IP
+      script3="/Scan/tcp_"$port
+      script4='_sslscan.txt"'
+      script=$script1$script2$script3$script4
+      echo $script
+      echo $script >>tempshell.sh
+   fi
 
    if [ "$proto" = "SSH" -o "$proto" = "ssh" ]; then
 
@@ -42,7 +81,6 @@ do
       echo $script >>tempshell.sh
    fi
 
-
    if [ "$proto" = "SMB" -o "$proto" = "smb" ]; then
 
       script1="sslscan --show-certificate --no-colour "$IP":"$port" 2>&1 | sudo tee "
@@ -53,13 +91,23 @@ do
       echo $script
       echo $script >>tempshell.sh
 
-      script1="nmap -vv --reason -Pn -sU -sV -p $port "
-      script2="--script='banner,(nbstat or smb* or ssl*) and not (brute or broadcast or dos or external or fuzzer)' --script-args='unsafe=1'-oN /root/Lab/"
-      script3="$IP/Scan/udp_"$port
-      script4="_smb_nmap.txt "$IP
-      script=$script1$script2$script3$script4
-      echo $script
-      echo $script >> tempshell.sh
+      if [ "port"= "137" ]; then
+         script1="nmap -vv --reason -Pn -sU -sV -p $port "
+         script2='--script="banner,(nbstat or smb* or ssl*) and not (brute or broadcast or dos or external or fuzzer)" --script-args="unsafe=1" -oN /root/Lab/'
+         script3="$IP/Scan/udp_"$port
+         script4="_smb_nmap.txt "$IP
+         script=$script1$script2$script3$script4
+         echo $script
+         echo $script >> tempshell.sh
+      else
+         script1="nmap -vv --reason -Pn -sV -p $port "
+         script2="--script='banner,(nbstat or smb* or ssl*) and not (brute or broadcast or dos or external or fuzzer)' --script-args='unsafe=1' -oN /root/Lab/"
+         script3="$IP/Scan/tcp_"$port
+         script4="_smb_nmap.txt "$IP
+         script=$script1$script2$script3$script4
+         echo $script
+         echo $script >> tempshell.sh
+      fi
 
       script1="smbmap -H $IP -P $port 2>&1 | tee -a "
       script2='"/root/Lab/'$IP
@@ -105,7 +153,7 @@ do
       echo $script
       echo $script >> tempshell.sh
 
-      if [ "smbflag" = 0 ]; then
+      if [ "$smbflag" = "o" ]; then
          script1="nbtscan -rvh "$IP" 2>&1 | tee "
          script2='"/root/Lab/'$IP
          script3='/Scan/nbtscan.txt"'
@@ -120,14 +168,14 @@ do
          echo $script
          echo $script >> tempshell.sh
 
-         script1="smbclient -L\\ -N -I"$IP" 2>&1 | tee "
+         script1="smbclient -L \\ -N -I "$IP" 2>&1 | tee "
          script2='"/root/Lab/'$IP
          script3='/Scan/smbclient.txt"'
          script=$script1$script2$script3
          echo $script
          echo $script >> tempshell.sh
 
-         smbflag=1
+         smbflag="c"
       fi
    fi
 
@@ -144,7 +192,7 @@ do
       script2='"/root/Lab/'$IP
       script3="/Scan/tcp_"$port
       script4='_sslscan.txt"'
-      script=$script1$script2$script3$port$script4
+      script=$script1$script2$script3$script4
       echo $script
       echo $script >>tempshell.sh
       
@@ -181,8 +229,6 @@ do
       echo $script
       echo $script >>tempshell.sh
    fi
-   read -p "port= " port
-   read -p "Protocol= " proto
 done
 sudo chmod 777 tempshell.sh
 ./tempshell.sh            
