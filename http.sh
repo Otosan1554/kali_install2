@@ -25,6 +25,64 @@ do
    read -p "port= " port
    read -p "Protocol= " proto
 
+   if [ "$proto" = "NNTP" -o "$proto" = "nntp" ]; then
+      script1="nmap -vv --reason -Pn -sV -p $port "
+      script2='--script="banner,nntp-ntlm-info" -oN /root/Lab/'
+      script3="$IP/Scan/tcp_"$port
+      script4="_nntp_nmap.txt "$IP
+      script=$script1$script2$script3$script4
+      echo $script
+      echo $script >> tempshell.sh
+
+      script1="sslscan --show-certificate --no-colour "$IP":"$port" 2>&1 | sudo tee "
+      script2='"/root/Lab/'$IP
+      script3="/Scan/tcp_"$port
+      script4='_sslscan.txt"'
+      script=$script1$script2$script3$script4
+      echo $script
+      echo $script >>tempshell.sh
+   fi
+
+   if [ "$proto" = "POP3" -o "$proto" = "pop3" ]; then
+      script1="nmap -vv --reason -Pn -sV -p $port "
+      script2='--script="banner,(pop3* or ssl*) and not (brute or broadcast or dos or external or fuzzer)"  -oN /root/Lab/'
+      script3="$IP/Scan/tcp_"$port
+      script4="_pop3_nmap.txt "$IP
+      script=$script1$script2$script3$script4
+      echo $script
+      echo $script >> tempshell.sh
+
+      script1="sslscan --show-certificate --no-colour "$IP":"$port" 2>&1 | sudo tee "
+      script2='"/root/Lab/'$IP
+      script3="/Scan/tcp_"$port
+      script4='_sslscan.txt"'
+      script=$script1$script2$script3$script4
+      echo $script
+      echo $script >>tempshell.sh
+   fi
+
+   if [ "$proto" = "SMTP" -o "$proto" = "smtp" ]; then
+      script1="nmap -vv --reason -Pn -sV -p $port "
+      script2='--script="banner,(smtp* or ssl*) and not (brute or broadcast or dos or external or fuzzer)"  -oN /root/Lab/'
+      script3="$IP/Scan/tcp_"$port
+      script4="_smtp_nmap.txt "$IP
+      script=$script1$script2$script3$script4
+      echo $script
+      echo $script >> tempshell.sh
+
+      script1="sslscan --show-certificate --no-colour "$IP":"$port" 2>&1 | sudo tee "
+      script2='"/root/Lab/'$IP
+      script3="/Scan/tcp_"$port
+      script4='_sslscan.txt"'
+      script=$script1$script2$script3$script4
+      echo $script
+      echo $script >>tempshell.sh
+
+      script='smtp-user-enum -M VRFY -U "/usr/share/seclists/Usernames/top-usernames-shortlist.txt" -t '$IP" -p "$port' 2>&1 | tee "/root/Lab/'$IP"Scan/tcp_"$port'_smtp_user-enum.txt"'
+      echo $script
+      echo $script >>tempshell.sh
+   fi
+
    if [ "$proto" = "RDP" -o "$proto" = "rdp" ]; then
       script1="nmap -vv --reason -Pn -sV -p $port "
       script2='--script="banner,(rdp* or ssl*) and not (brute or broadcast or dos or external or fuzzer)"  -oN /root/Lab/'
