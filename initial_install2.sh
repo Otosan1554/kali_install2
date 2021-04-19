@@ -170,8 +170,11 @@ cd /root/tools
 wget https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh  
 chmod 777 lse.sh
 
-echo "gunzip rockyou.txt"
+echo "gunzip rockyou.txtを解凍します"
 gunzip /usr/share/wordlists/rockyou.txt.gz
+
+echo "smb.confのglobal セッティングに下記を追加してください"
+echo "client min protocol = core"
 
 echo "次のブラウザアドオンを導入します"
 echo "Web Developerアドオン"
