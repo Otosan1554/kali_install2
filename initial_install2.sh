@@ -4,6 +4,8 @@ read -p "アンチウィルスを停止しましたか？"
 
 mkdir /root/tools
 mkdir /root/www
+mkdir /root/www/privesc
+mkdir /root/www/script
 
 mv /root/kali_conf/cplc.sh /root/tools
 mv /root/kali_conf/vulnscan.sh /root/tools
@@ -156,17 +158,17 @@ echo "terminaorの導入"
 apt install terminator
 
 echo "LinPEASの導入"
-cd /root/tools
+cd /root/www/script
 wget https://raw.githubusercontent.com/carlospolop/privilege-escalation-awesome-scripts-suite/master/linPEAS/linpeas.sh
 chmod 777 linpeas.sh
 
 echo "Linux Smart Enumeration Toolの導入"
-cd /root/tools
+cd /root/www/script
 wget https://raw.githubusercontent.com/diego-treitos/linux-smart-enumeration/master/lse.sh    
 chmod 777 lse.sh
 
 echo "Linenumの導入"
-cd /root/tools
+cd /root/www/script
 wget https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh  
 chmod 777 lse.sh
 
