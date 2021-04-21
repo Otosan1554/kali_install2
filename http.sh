@@ -78,7 +78,7 @@ do
       echo $script
       echo $script >>tempshell.sh
 
-      script='smtp-user-enum -M VRFY -U "/usr/share/seclists/Usernames/top-usernames-shortlist.txt" -t '$IP" -p "$port' 2>&1 | tee "/root/Lab/'$IP"Scan/tcp_"$port'_smtp_user-enum.txt"'
+      script='smtp-user-enum -M VRFY -U "/usr/share/seclists/Usernames/top-usernames-shortlist.txt" -t '$IP" -p "$port' 2>&1 | tee "/root/Lab/'$IP"/Scan/tcp_"$port'_smtp_user-enum.txt"'
       echo $script
       echo $script >>tempshell.sh
    fi
