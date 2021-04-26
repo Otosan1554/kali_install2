@@ -172,6 +172,21 @@ cd /root/www/script
 wget https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh  
 chmod 777 lse.sh
 
+echo "Linux priv checkerの導入"
+cd /root/www/script
+wget https://raw.githubusercontent.com/sleventyeleven/linuxprivchecker/master/linuxprivchecker.py
+chmod 777 linuxprivchecker.py
+
+echo "Unux privesc checkerの導入"
+cd /root/www/script
+wget http://pentestmonkey.net/tools/unix-privesc-check/unix-privesc-check-1.4.tar.gz
+tar -zxvf unix-privesc-check-1.4.tar.gz
+cp /root/www/script/unix-privesc-check-1.4/unix-privesc-check /root/www/script
+mv /root/www/script/unix-privesc-check /root/www/script/unix-privesc-check.sh
+chmod 777 /root/www/script/unix-privesc-check.sh
+rm -R /root/www/script/unix-privesc-check-1.4/
+
+
 echo "gunzip rockyou.txtを解凍します"
 gunzip /usr/share/wordlists/rockyou.txt.gz
 
