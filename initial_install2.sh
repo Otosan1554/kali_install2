@@ -177,6 +177,11 @@ cd /root/www/script
 wget https://raw.githubusercontent.com/sleventyeleven/linuxprivchecker/master/linuxprivchecker.py
 chmod 777 linuxprivchecker.py
 
+echo "BeRootの導入"
+cd /root/www/script
+wget https://github.com/AlessandroZ/BeRoot/blob/master/Linux/beroot.py
+chmod 777 beroot.py
+
 echo "Unux privesc checkerの導入"
 cd /root/www/script
 wget http://pentestmonkey.net/tools/unix-privesc-check/unix-privesc-check-1.4.tar.gz
