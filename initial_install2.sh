@@ -182,6 +182,11 @@ cd /root/www/script
 wget https://github.com/AlessandroZ/BeRoot/blob/master/Linux/beroot.py
 chmod 777 beroot.py
 
+echo "linux exoloit suggester 2の導入"
+cd /root/www/script
+wget https://github.com/jondonas/linux-exploit-suggester-2/blob/master/linux-exploit-suggester-2.pl
+chmod 777 linux-exploit-suggester-2.pl
+
 echo "Unux privesc checkerの導入"
 cd /root/www/script
 wget http://pentestmonkey.net/tools/unix-privesc-check/unix-privesc-check-1.4.tar.gz
@@ -190,7 +195,6 @@ cp /root/www/script/unix-privesc-check-1.4/unix-privesc-check /root/www/script
 mv /root/www/script/unix-privesc-check /root/www/script/unix-privesc-check.sh
 chmod 777 /root/www/script/unix-privesc-check.sh
 rm -R /root/www/script/unix-privesc-check-1.4/
-
 
 echo "gunzip rockyou.txtを解凍します"
 gunzip /usr/share/wordlists/rockyou.txt.gz
