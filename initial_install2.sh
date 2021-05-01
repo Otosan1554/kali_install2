@@ -196,6 +196,9 @@ mv /root/www/script/unix-privesc-check /root/www/script/unix-privesc-check.sh
 chmod 777 /root/www/script/unix-privesc-check.sh
 rm -R /root/www/script/unix-privesc-check-1.4/
 
+echo "straceの導入"
+apt install strace
+
 echo "gunzip rockyou.txtを解凍します"
 gunzip /usr/share/wordlists/rockyou.txt.gz
 
