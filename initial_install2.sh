@@ -162,10 +162,17 @@ apt install ffuf
 echo "terminaorの導入"
 apt install terminator
 
-echo "LinPEASの導入"
-cd /root/www/script
-wget https://raw.githubusercontent.com/carlospolop/privilege-escalation-awesome-scripts-suite/master/linPEAS/linpeas.sh
-chmod 777 linpeas.sh
+echo "LinPEAS/winPEASの導入"
+cd /tmp
+rm -R /tmp/privilege-escalation-awesome-scripts-suite/
+git clone https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/
+cp /tmp/privilege-escalation-awesome-scripts-suite/linPEAS/linpeas.sh /root/www/script
+
+chmod 777 /root/www/script/linpeas.sh
+
+cp /tmp/privilege-escalation-awesome-scripts-suite/winPEAS/winPEASbat/winPEAS.bat /root/www/script
+cp /tmp/privilege-escalation-awesome-scripts-suite/winPEAS/winPEASexe/binaries/x64/Release/winPEASx64.exe  /root/www/script
+cp /tmp/privilege-escalation-awesome-scripts-suite/winPEAS/winPEASexe/binaries/x86/Release/winPEASx86.exe  /root/www/script
 
 echo "Linux Smart Enumeration Toolの導入"
 cd /root/www/script
