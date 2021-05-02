@@ -137,15 +137,14 @@ git clone https://github.com/Dionach/CMSmap
 echo "Powersploitの導入"
 apt install powersploit
 
-echo "Apache配下を作成"
-mkdir /var/www2/html/
+echo "root/www配下を作成"
 cp -R /usr/share/windows-resources /root/www/windows-resources 
 cp -R /usr/share/windows-binaries /root/www/windows-binaries 
 cp -R /usr/share/windows-privesc-check /root/www/windows-privesc-check 
 cp -R /usr/share/webshells /root/www/webshells 
 cp -R /usr/share/nishang /root/www/nishang 
 cp -R /usr/share/unix-privesc-check /root/www/unix-privesc-check 
-
+cp -R webshells /root/www/webshells
 
 echo "Easy-Pの導入"
 cd /root/tools
