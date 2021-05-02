@@ -173,6 +173,7 @@ chmod 777 /root/www/script/linpeas.sh
 cp /tmp/privilege-escalation-awesome-scripts-suite/winPEAS/winPEASbat/winPEAS.bat /root/www/script
 cp /tmp/privilege-escalation-awesome-scripts-suite/winPEAS/winPEASexe/binaries/x64/Release/winPEASx64.exe  /root/www/script
 cp /tmp/privilege-escalation-awesome-scripts-suite/winPEAS/winPEASexe/binaries/x86/Release/winPEASx86.exe  /root/www/script
+cp /tmp/privilege-escalation-awesome-scripts-suite/winPEAS/winPEASexe/binaries/Release/winPEASany.exe  /root/www/script
 
 echo "Linux Smart Enumeration Toolの導入"
 cd /root/www/script
@@ -207,11 +208,6 @@ cp /root/www/script/unix-privesc-check-1.4/unix-privesc-check /root/www/script
 mv /root/www/script/unix-privesc-check /root/www/script/unix-privesc-check.sh
 chmod 777 /root/www/script/unix-privesc-check.sh
 rm -R /root/www/script/unix-privesc-check-1.4/
-
-echo "winPEASの導入"
-cd /root/www/script
-wget https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/blob/master/winPEAS/winPEASbat/winPEAS.bat
-
 
 echo "straceの導入"
 apt install strace
