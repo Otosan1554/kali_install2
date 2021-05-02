@@ -60,7 +60,11 @@ echo "Powercatの導入"
 sudo apt install powercat
 
 echo "Empireの導入"
-apt install empire
+cd /root/tools
+git clone https://github.com/EmpireProject/Empire.git
+apt-get install libssl-dev swig python3-dev gcc
+cd /Empire/setup
+./install.sh
 
 echo "Shelterのインストール"
 sudo apt install shellter
