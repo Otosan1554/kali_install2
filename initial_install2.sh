@@ -145,6 +145,8 @@ cp -R /usr/share/webshells /root/www/webshells
 cp -R /usr/share/nishang /root/www/nishang 
 cp -R /usr/share/unix-privesc-check /root/www/unix-privesc-check 
 cp -R webshell /root/www/webshells
+cp -R script /root/www/script
+cp /root/www/windows-resources/powersploit/Privesc/PowerUp.ps1 /root/www/script
 
 echo "Easy-Pの導入"
 cd /root/tools
