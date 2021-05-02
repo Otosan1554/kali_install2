@@ -144,7 +144,7 @@ cp -R /usr/share/windows-privesc-check /root/www/windows-privesc-check
 cp -R /usr/share/webshells /root/www/webshells 
 cp -R /usr/share/nishang /root/www/nishang 
 cp -R /usr/share/unix-privesc-check /root/www/unix-privesc-check 
-cp -R webshells /root/www/webshells
+cp -R webshell /root/www/webshells
 
 echo "Easy-Pの導入"
 cd /root/tools
