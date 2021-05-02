@@ -201,6 +201,11 @@ mv /root/www/script/unix-privesc-check /root/www/script/unix-privesc-check.sh
 chmod 777 /root/www/script/unix-privesc-check.sh
 rm -R /root/www/script/unix-privesc-check-1.4/
 
+echo "winPEASの導入"
+cd /root/www/script
+wget https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/blob/master/winPEAS/winPEASbat/winPEAS.bat
+
+
 echo "straceの導入"
 apt install strace
 
