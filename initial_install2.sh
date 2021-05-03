@@ -200,6 +200,10 @@ cd /root/www/script
 wget https://github.com/jondonas/linux-exploit-suggester-2/blob/master/linux-exploit-suggester-2.pl
 chmod 777 linux-exploit-suggester-2.pl
 
+echo "Windows exoloit suggesterの導入"
+cd /root/tools
+git clone https://github.com/bitsadmin/wesng
+
 echo "Unux privesc checkerの導入"
 cd /root/www/script
 wget http://pentestmonkey.net/tools/unix-privesc-check/unix-privesc-check-1.4.tar.gz
