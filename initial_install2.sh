@@ -142,10 +142,10 @@ cp -R /usr/share/windows-resources /root/www/windows-resources
 cp -R /usr/share/windows-binaries /root/www/windows-binaries 
 cp -R /usr/share/windows-privesc-check /root/www/windows-privesc-check 
 cp -R /usr/share/webshells /root/www/webshells 
-cp -R /usr/share/nishang /root/www/nishang 
+cp -R /usr/share/nishang /root/www/nishang
 cp -R /usr/share/unix-privesc-check /root/www/unix-privesc-check 
-cp -R webshell /root/www/webshells
-cp -R script /root/www/script
+cp /root/kali_conf/webshell/* /root/www/webshells
+cp /root/kali_conf/script/* /root/www/script
 cp /root/www/windows-resources/powersploit/Privesc/PowerUp.ps1 /root/www/script
 
 echo "Easy-Pの導入"
@@ -209,7 +209,7 @@ cd /tmp
 git clone https://github.com/411Hall/JAWS
 cp /tmp/JAWS/jaws-enum.ps1 /root/www/script
 
-echo "Unux privesc checkerの導入"
+echo "Unix privesc checkerの導入"
 cd /root/www/script
 wget http://pentestmonkey.net/tools/unix-privesc-check/unix-privesc-check-1.4.tar.gz
 tar -zxvf unix-privesc-check-1.4.tar.gz
@@ -217,6 +217,7 @@ cp /root/www/script/unix-privesc-check-1.4/unix-privesc-check /root/www/script
 mv /root/www/script/unix-privesc-check /root/www/script/unix-privesc-check.sh
 chmod 777 /root/www/script/unix-privesc-check.sh
 rm -R /root/www/script/unix-privesc-check-1.4/
+rm unix-privesc-check/unix-privesc-check-1.4.tar.gz
 
 echo "straceの導入"
 apt install strace
