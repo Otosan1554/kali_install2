@@ -13,6 +13,7 @@ mv /root/kali_conf/tcpscan.sh /root/tools
 mv /root/kali_conf/udpscan.sh /root/tools
 mv /root/kali_conf/mount.sh /root/tools
 mv /root/kali_conf/srccopy.sh /root/tools
+mv /root/kali_conf/reverse_shellgen.sh /root/tools
 
 echo "export PATH=$PATH:/root/tools" >> /root/.bashrc
 echo "export PATH=$PATH:/root/tools" >> /root/.zshrc
@@ -144,8 +145,8 @@ cp -R /usr/share/windows-privesc-check /root/www/windows-privesc-check
 cp -R /usr/share/webshells /root/www/webshells 
 cp -R /usr/share/nishang /root/www/nishang
 cp -R /usr/share/unix-privesc-check /root/www/unix-privesc-check 
-cp /root/kali_conf/webshell/* /root/www/webshells
-cp /root/kali_conf/script/* /root/www/script
+mv /root/kali_conf/webshell/* /root/www/webshells
+mv /root/kali_conf/script/* /root/www/script
 cp /root/www/windows-resources/powersploit/Privesc/PowerUp.ps1 /root/www/script
 
 echo "Easy-Pの導入"
