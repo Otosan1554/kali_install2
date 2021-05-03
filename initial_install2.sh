@@ -204,6 +204,11 @@ echo "Windows exoloit suggesterの導入"
 cd /root/tools
 git clone https://github.com/bitsadmin/wesng
 
+echo "JAWSの導入"
+cd /tmp
+git clone https://github.com/411Hall/JAWS
+cp /tmp/JAWS/jaws-enum.ps1 /root/www/script
+
 echo "Unux privesc checkerの導入"
 cd /root/www/script
 wget http://pentestmonkey.net/tools/unix-privesc-check/unix-privesc-check-1.4.tar.gz
