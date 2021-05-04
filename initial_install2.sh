@@ -6,6 +6,7 @@ mkdir /root/tools
 mkdir /root/www
 mkdir /root/www/privesc
 mkdir /root/www/script
+mkdir /root/www/revshell
 
 mv /root/kali_conf/cplc.sh /root/tools
 mv /root/kali_conf/vulnscan.sh /root/tools
