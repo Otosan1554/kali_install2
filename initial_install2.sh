@@ -224,6 +224,9 @@ rm unix-privesc-check/unix-privesc-check-1.4.tar.gz
 echo "straceの導入"
 apt install strace
 
+echo "gimpの導入"
+apt install gimp
+
 echo "gunzip rockyou.txtを解凍します"
 gunzip /usr/share/wordlists/rockyou.txt.gz
 
