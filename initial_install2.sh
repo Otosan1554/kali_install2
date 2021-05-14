@@ -227,6 +227,9 @@ apt install strace
 echo "gimpの導入"
 apt install gimp
 
+echo "sipviciousの導入"
+apt install sipvicious
+
 echo "gunzip rockyou.txtを解凍します"
 gunzip /usr/share/wordlists/rockyou.txt.gz
 
