@@ -199,7 +199,7 @@ chmod 777 beroot.py
 
 echo "linux exoloit suggester 2の導入"
 cd /root/www/script
-wget https://github.com/jondonas/linux-exploit-suggester-2/blob/master/linux-exploit-suggester-2.pl
+wget https://raw.githubusercontent.com/jondonas/linux-exploit-suggester-2/master/linux-exploit-suggester-2.pl
 chmod 777 linux-exploit-suggester-2.pl
 
 echo "Windows exoloit suggesterの導入"
