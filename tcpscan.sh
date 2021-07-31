@@ -21,12 +21,16 @@ fi
 rm -R /root/Lab/$IP/Scan
 mkdir /root/Lab/$IP/Scan
 
-nmap -n -vv --reason -Pn --osscan-guess -sS -p- -v -T 4 -oN /root/Lab/$IP/TCP_Portscan.nmap $IP
+nmap -n -vv --reason -Pn -A --osscan-guess -p- --version-all -T 4 -oN /root/Lab/$IP/TCP_Portscan.nmap $IP
+
 a=""
-for x in $(grep "/tcp" /root/Lab/$IP/TCP_Portscan.nmap | cut -d "/" -f 1); do
-	a=$a","$x
+x=""
+for x in $(grep "/tcp" /root/Lab/$IP/TCP_Portscan.nmap | cut -d " " -f1| grep "/tcp" | cut -d "/" -f1) ; do
+    a=$a","$x
 done
+
 b=${a:1}
 c="-p "$b
+echo $c
 
 nmap -n -Pn -sV -vv $c -T 4 -sC -oN /root/Lab/$IP/TCP_sV.nmap $IP
