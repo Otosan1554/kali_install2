@@ -290,55 +290,59 @@ do
    fi
 
    if [ "$proto" = "HTTP" -o "$proto" = "http" -o "$proto" = "HTTPS" -o "$proto" = "https" ]; then
-      script1="nmap -vv --reason -Pn -sV -p $port "
-      script2="--script='(http* or ssl*) and not (brute or broadcast or dos or external or http-slowloris* or fuzzer)' -oN /root/Lab/"
-      script3="$IP/Scan/tcp_"$port
-      script4="_http_nmap.txt "$IP
-      script=$script1$script2$script3$script4
-      echo $script
-      echo $script >> /root/Lab/$IP/tempshell.sh
+      dddurl=""
+      read -p "Additional URL? >  " addurl
+      if [ "$addurl" = ""  ]; then
+         script1="nmap -vv --reason -Pn -sV -p $port "
+         script2="--script='(http* or ssl*) and not (brute or broadcast or dos or external or http-slowloris* or fuzzer)' -oN /root/Lab/"
+         script3="$IP/Scan/tcp_"$port
+         script4="_http_nmap.txt "$IP
+         script=$script1$script2$script3$script4
+         echo $script
+         echo $script >> /root/Lab/$IP/tempshell.sh
 
-      script1="sslscan --show-certificate --no-colour "$IP":"$port" 2>&1 | sudo tee "
-      script2='"/root/Lab/'$IP
-      script3="/Scan/tcp_"$port
-      script4='_sslscan.txt"'
-      script=$script1$script2$script3$script4
-      echo $script
-      echo $script >> /root/Lab/$IP/tempshell.sh
+         script1="sslscan --show-certificate --no-colour "$IP":"$port" 2>&1 | sudo tee "
+         script2='"/root/Lab/'$IP
+         script3="/Scan/tcp_"$port
+         script4='_sslscan.txt"'
+         script=$script1$script2$script3$script4
+         echo $script
+         echo $script >> /root/Lab/$IP/tempshell.sh
       
-      script1="curl -sSik $proto://$IP:$port/robots.txt -m 10 2>&1 | sudo tee "
-      script2='"/root/Lab/'$IP
-      script3="/Scan/tcp_"$port
-      script4='_http_robots.txt"'
-      script=$script1$script2$script3$script4
-      echo $script
-      echo $script >> /root/Lab/$IP/tempshell.sh
+         script1="curl -sSik $proto://$IP:$port/robots.txt -m 10 2>&1 | sudo tee "
+         script2='"/root/Lab/'$IP
+         script3="/Scan/tcp_"$port
+         script4='_http_robots.txt"'
+         script=$script1$script2$script3$script4
+         echo $script
+         echo $script >> /root/Lab/$IP/tempshell.sh
 
-      script1="whatweb --color=never --no-errors -a 3 -v $proto://"$IP":"$port" 2>&1 | sudo tee "
-      script2='"/root/Lab/'$IP
-      script3="/Scan/tcp_"$port
-      script4='_http_whatweb.txt"'
-      script=$script1$script2$script3$script4
-      echo $script
-      echo $script >> /root/Lab/$IP/tempshell.sh
+         script1="whatweb --color=never --no-errors -a 3 -v $proto://"$IP":"$port" 2>&1 | sudo tee "
+         script2='"/root/Lab/'$IP
+         script3="/Scan/tcp_"$port
+         script4='_http_whatweb.txt"'
+         script=$script1$script2$script3$script4
+         echo $script
+         echo $script >> /root/Lab/$IP/tempshell.sh
+      fi
 
       if [ "$proto" = "HTTPS" -o "$proto" = "https" ]; then
-         script1="nikto -ask=no -host $IP -port $port -ssl 2>&1 | sudo tee "
+         script1="nikto -ask=no -host $proto://$IP:$port"/"$addurl -ssl 2>&1 | sudo tee "
       else
-         script1="nikto -ask=no -host $IP -port $port -nossl 2>&1 | sudo tee "      
+         script1="nikto -ask=no -host $proto://$IP:$port"/"$addurl -nossl 2>&1 | sudo tee "      
       fi
       script2='"/root/Lab/'$IP
       script3="/Scan/tcp_"$port
-      script4='_http_nikto.txt"'
+      script4='_http_nikto'$addurl'.txt"'
       script=$script1$script2$script3$script4
       echo $script
       echo $script >> /root/Lab/$IP/tempshell2.sh
 
-      script1="dirb $proto://"$IP":"$port
+      script1="dirb $proto://"$IP":"$port"/"$addurl
       script2=" /usr/share/seclists/Discovery/Web-Content/common.txt"
       script3=" -o /root/Lab/"$IP
       script4="/Scan/tcp_"$port
-      script5='_http_dirb.txt'
+      script5='_http_dirb'$addurl'.txt'
       script=$script1$script2$script3$script4$script5
       echo $script
       echo $script >> /root/Lab/$IP/tempshell3.sh
