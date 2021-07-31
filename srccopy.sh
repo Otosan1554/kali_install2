@@ -18,7 +18,7 @@ do
    do
       echo "$fname copied"
       cp $fname /root/Lab/$IP/sandbox
-      cp $fname /root/www/privesc
+      cp $fname /var/www/html/$IP
    done
 
 done
