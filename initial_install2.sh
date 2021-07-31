@@ -75,7 +75,7 @@ read -p "いったん確認"
 
 echo "sshサーバの自動起動設定"
 sudo systemctl start ssh.service
-sudo systemctl enable ssh
+sudo systemctl disable ssh
 
 echo "niktoの導入"
 apt install nikto
