@@ -2,6 +2,12 @@
 
 read -p "IP > " IP
 
+if [ -d /var/www/html/$IP ]; then
+   echo ""
+else
+   mkdir /var/www/html/$IP
+fi
+
 exploit_name="x"
 
 while [ "$exploit_name" != "" ]
@@ -81,7 +87,7 @@ do
       fi
    fi
 
-   if [ "$input1" = "PY" ] || [ "$input1" = "py" ] ; then
+   if [ "$input1" = "py" ] ; then
       echo "$exploit_name Copied "
       cp /root/Lab/$IP/sandbox/$exploit_name /var/www/html/$IP
    fi
