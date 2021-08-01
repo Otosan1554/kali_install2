@@ -1,8 +1,20 @@
 #!/usr/bin/bash
 
-mkdir /root/tools
-mkdir /var/www/html/windows
-mkdir /var/www/html/linux
+mkdir /var/www/html/windows/script
+mkdir /var/www/html/linux/script
+
+echo "Linenumの導入"
+cd /var/www/html/linux/script
+wget https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh  
+chmod 700 LinEnum.sh
+
+echo "LinPEASの導入"
+cd /var/www/html/linux/script
+wget https://github.com/carlospolop/PEASS-ng/blob/master/linPEAS/linpeas.sh
+chmod 700 linpeas.sh
+
+
+
 
 echo "Powercatの導入"
 sudo apt install powercat
@@ -27,13 +39,6 @@ mv /root/kali_conf/script/* /root/www/script
 cp /root/www/windows-resources/powersploit/Privesc/PowerUp.ps1 /root/www/script
 
 echo "LinPEAS/winPEASの導入"
-cd /tmp
-rm -R /tmp/privilege-escalation-awesome-scripts-suite/
-git clone https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/
-cp /tmp/privilege-escalation-awesome-scripts-suite/linPEAS/linpeas.sh /root/www/script
-
-chmod 777 /root/www/script/linpeas.sh
-
 cp /tmp/privilege-escalation-awesome-scripts-suite/winPEAS/winPEASbat/winPEAS.bat /root/www/script
 cp /tmp/privilege-escalation-awesome-scripts-suite/winPEAS/winPEASexe/binaries/x64/Release/winPEASx64.exe  /root/www/script
 cp /tmp/privilege-escalation-awesome-scripts-suite/winPEAS/winPEASexe/binaries/x86/Release/winPEASx86.exe  /root/www/script
@@ -44,10 +49,6 @@ cd /root/www/script
 wget https://raw.githubusercontent.com/diego-treitos/linux-smart-enumeration/master/lse.sh    
 chmod 777 lse.sh
 
-echo "Linenumの導入"
-cd /root/www/script
-wget https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh  
-chmod 777 lse.sh
 
 echo "Linux priv checkerの導入"
 cd /root/www/script
