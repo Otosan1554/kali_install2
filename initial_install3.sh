@@ -1,6 +1,8 @@
 #!/usr/bin/bash
 
+mkdir /var/www/html/windows/
 mkdir /var/www/html/windows/script
+mkdir /var/www/html/linux/
 mkdir /var/www/html/linux/script
 
 echo "Linenumの導入"
