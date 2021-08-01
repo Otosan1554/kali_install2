@@ -8,6 +8,12 @@ else
 	mkdir /root/Lab/$IP/sandbox
 fi
 
+if [ -d /var/www/html/$IP ]; then
+	echo ""
+else
+	mkdir /var/www/html/$IP
+fi
+
 exploit_name="x"
 
 while [ "$exploit_name" != "" ]
