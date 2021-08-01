@@ -35,41 +35,32 @@ mv unix-privesc-check unix-privesc-check.sh
 chmod 777 /root/www/script/unix-privesc-check.sh
 
 echo "windows-privsesc-checkの導入"
-rm -r /usr/share/windows-privesc-check
-cd /usr/share
-git clone https://github.com/pentestmonkey/windows-privesc-check.git
+cd /var/www/html/windows/script
+wget https://github.com/pentestmonkey/windows-privesc-check/blob/master/windows-privesc-check2.exe
 
-echo "root/www配下を作成"
-cp -R /usr/share/windows-resources /root/www/windows-resources 
-cp -R /usr/share/windows-binaries /root/www/windows-binaries 
-cp -R /usr/share/windows-privesc-check /root/www/windows-privesc-check 
-cp -R /usr/share/webshells /root/www/webshells 
-cp -R /usr/share/nishang /root/www/nishang
-mv /root/kali_conf/webshell/* /root/www/webshells
-mv /root/kali_conf/script/* /root/www/script
-cp /root/www/windows-resources/powersploit/Privesc/PowerUp.ps1 /root/www/script
-
-echo "LinPEAS/winPEASの導入"
-cp /tmp/privilege-escalation-awesome-scripts-suite/winPEAS/winPEASbat/winPEAS.bat /root/www/script
-cp /tmp/privilege-escalation-awesome-scripts-suite/winPEAS/winPEASexe/binaries/x64/Release/winPEASx64.exe  /root/www/script
-cp /tmp/privilege-escalation-awesome-scripts-suite/winPEAS/winPEASexe/binaries/x86/Release/winPEASx86.exe  /root/www/script
-cp /tmp/privilege-escalation-awesome-scripts-suite/winPEAS/winPEASexe/binaries/Release/winPEASany.exe  /root/www/script
-
-echo "BeRootの導入"
-cd /root/www/script
-wget https://github.com/AlessandroZ/BeRoot/blob/master/Linux/beroot.py
-chmod 777 beroot.py
+echo "winPEASの導入"
+cd /var/www/html/windows/script
+wget https://github.com/carlospolop/PEASS-ng/blob/master/winPEAS/winPEASexe/binaries/x64/Release/winPEASx64.exe
+wget https://github.com/carlospolop/PEASS-ng/blob/master/winPEAS/winPEASexe/binaries/x86/Release/winPEASx86.exe
+wget https://github.com/carlospolop/PEASS-ng/blob/master/winPEAS/winPEASbat/winPEAS.bat
 
 echo "Windows exoloit suggesterの導入"
 cd /root/tools
 git clone https://github.com/bitsadmin/wesng
 
 echo "JAWSの導入"
-cd /tmp
-git clone https://github.com/411Hall/JAWS
-cp /tmp/JAWS/jaws-enum.ps1 /root/www/script
+cd /var/www/html/windows/script
+wget https://github.com/411Hall/JAWS/blob/master/jaws-enum.ps1
 
-
+echo "root/www配下を作成"
+cp -R /usr/share/windows-resources /var/www/html/windows-resources 
+cp -R /usr/share/windows-binaries /var/www/html/windows-binaries 
+cp -R /usr/share/webshells /root/www/webshells 
+cp -R /usr/share/nishang /root/www/nishang
+mv /root/kali_conf/webshell/* /root/www/webshells
+mv /root/kali_conf/windows-binaries/Seatbelt.exe /var/www/html/windows/script
+mv /root/kali_conf/windows-binaries/SharpUp.exe /var/www/html/windows/script
+mv /root/kali_conf/windows-binaries/accesschk.exe /var/www/html/windows/script
 
 echo "Powercatの導入"
 sudo apt install powercat
