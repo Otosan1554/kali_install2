@@ -59,6 +59,7 @@ cp -R /usr/share/windows-resources /var/www/html/windows-resources
 cp -R /usr/share/windows-binaries /var/www/html/windows-binaries 
 cp -R /usr/share/webshells /root/www/webshells 
 cp -R /usr/share/nishang /root/www/nishang
+mv /root/kali_conf/script_linux /var/www/html/linux/script
 mv /root/kali_conf/webshell/* /root/www/webshells
 mv /root/kali_conf/windows-binaries/Seatbelt.exe /var/www/html/windows/script
 mv /root/kali_conf/windows-binaries/SharpUp.exe /var/www/html/windows/script
