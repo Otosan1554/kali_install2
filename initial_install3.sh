@@ -57,8 +57,8 @@ wget https://github.com/411Hall/JAWS/blob/master/jaws-enum.ps1
 echo "root/www配下を作成"
 cp -R /usr/share/windows-resources /var/www/html/windows-resources 
 cp -R /usr/share/windows-binaries /var/www/html/windows-binaries 
-cp -R /usr/share/webshells /root/www/webshells 
-cp -R /usr/share/nishang /root/www/nishang
+cp -R /usr/share/webshells /var/www/html/webshells 
+cp -R /usr/share/nishang /var/www/html/nishang
 mv /root/kali_conf/script_linux /var/www/html/linux/script
 mv /root/kali_conf/webshell/* /root/www/webshells
 mv /root/kali_conf/windows-binaries/Seatbelt.exe /var/www/html/windows/script
