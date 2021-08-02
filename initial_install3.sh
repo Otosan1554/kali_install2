@@ -60,7 +60,7 @@ cp -R /usr/share/windows-binaries /var/www/html/windows-binaries
 cp -R /usr/share/webshells /var/www/html/webshells 
 cp -R /usr/share/nishang /var/www/html/nishang
 mv /root/kali_conf/script_linux /var/www/html/linux/script
-mv /root/kali_conf/webshell/* /root/www/webshells
+mv /root/kali_conf/webshell/* /var/www/html/webshells
 mv /root/kali_conf/windows-binaries/Seatbelt.exe /var/www/html/windows/script
 mv /root/kali_conf/windows-binaries/SharpUp.exe /var/www/html/windows/script
 mv /root/kali_conf/windows-binaries/accesschk.exe /var/www/html/windows/script
