@@ -290,9 +290,9 @@ do
    fi
 
    if [ "$proto" = "HTTP" -o "$proto" = "http" -o "$proto" = "HTTPS" -o "$proto" = "https" ]; then
-      dddurl=""
+      addurl=""
       read -p "Additional URL? >  " addurl
-      if [ "$addurl" = ""  ]; then
+#      if [ "$addurl" = ""  ]; then
          script1="nmap -vv --reason -Pn -sV -p $port "
          script2="--script='(http* or ssl*) and not (brute or broadcast or dos or external or http-slowloris* or fuzzer)' -oN /root/Lab/"
          script3="$IP/Scan/tcp_"$port
@@ -324,7 +324,7 @@ do
          script=$script1$script2$script3$script4
          echo $script
          echo $script >> /root/Lab/$IP/tempshell.sh
-      fi
+#      fi
 
       if [ "$proto" = "HTTPS" -o "$proto" = "https" ]; then
          script1="nikto -ask=no -host $proto://$IP:$port"/"$addurl -ssl 2>&1 | sudo tee "
