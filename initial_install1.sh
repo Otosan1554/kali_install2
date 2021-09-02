@@ -8,10 +8,10 @@ sudo apt -y update
 echo "seclistsの導入"
 sudo apt-get install seclists
 
-echo "OpenVASのインストールと起動"
-apt install -y gvm 
-gvm-setup
-gvm-start
+#echo "OpenVASのインストールと起動"
+#apt install -y gvm 
+#gvm-setup
+#gvm-start
 
 #echo "Discoverの導入"
 #rm -r /home/kali/discover
