@@ -65,39 +65,15 @@ apt install python3-pip
 echo "Autoreconの導入"
 pip install git+https://github.com/Tib3rius/AutoRecon.git
 
-echo "onetwopunchの導入"
-rm /root/onetwopunch.sh
-cd /root
-git clone https://github.com/superkojiman/onetwopunch
-cp /root/onetwopunch/onetwopunch.sh /root/tools/onetwopunch.sh
-rm -r /root/onetwopunch
-sudo chmod 777 /root/tools/onetwopunch.sh
-
 read -p "いったん確認"
 
 echo "exifの導入"
 sudo apt install exif
 
-echo "bruteforce-http-authの導入"
-cd /root/tools
-git clone https://github.com/erforschr/bruteforce-http-auth.git
-cd bruteforce-http-auth
-python3 -m pip install -r requirements.txt
-
 echo "parseroの導入"
 apt install parsero
 
-echo "Heartbleed exploitの導入"
-cd /root/tools
-git clone https://github.com/sensepost/heartbleed-poc.git
-
 read -p "いったん確認"
-
-echo "SMBexecの導入"
-rm -r /root/tools/smbexec
-git clone https://github.com/brav0hax/smbexec.git /root/tools/smbexec
-cd smbexec
-./install.sh
 
 echo "Veilの導入"
 apt install veil
@@ -105,18 +81,8 @@ apt install veil
 echo "nishangの導入"
 apt install nishang
 
-echo "CMSmapの導入"
-rm -r /root/tools/CMSmap
-cd /root/tools
-git clone https://github.com/Dionach/CMSmap
-
 echo "Powersploitの導入"
 apt install powersploit
-
-echo "Easy-Pの導入"
-cd /root/tools
-rm -r /root/tools/Easy-P
-git clone https://github.com/cheetz/Easy-P.git /root/tools/Easy-P
 
 echo "gobusterの導入"
 apt install gobuster
@@ -169,6 +135,45 @@ git clone https://github.com/EmpireProject/Empire.git
 apt-get install libssl-dev swig python3-dev gcc
 cd /Empire/setup
 ./install.sh
+
+echo "Windows exoloit suggesterの導入"
+cd /root/tools
+git clone https://github.com/bitsadmin/wesng
+
+echo "onetwopunchの導入"
+rm /root/onetwopunch.sh
+cd /root
+git clone https://github.com/superkojiman/onetwopunch
+cp /root/onetwopunch/onetwopunch.sh /root/tools/onetwopunch.sh
+rm -r /root/onetwopunch
+sudo chmod 777 /root/tools/onetwopunch.sh
+
+echo "bruteforce-http-authの導入"
+cd /root/tools
+git clone https://github.com/erforschr/bruteforce-http-auth.git
+cd bruteforce-http-auth
+python3 -m pip install -r requirements.txt
+
+echo "Heartbleed exploitの導入"
+cd /root/tools
+git clone https://github.com/sensepost/heartbleed-poc.git
+
+echo "SMBexecの導入"
+rm -r /root/tools/smbexec
+git clone https://github.com/brav0hax/smbexec.git /root/tools/smbexec
+cd smbexec
+./install.sh
+
+echo "CMSmapの導入"
+rm -r /root/tools/CMSmap
+cd /root/tools
+git clone https://github.com/Dionach/CMSmap
+
+
+echo "Easy-Pの導入"
+cd /root/tools
+rm -r /root/tools/Easy-P
+git clone https://github.com/cheetz/Easy-P.git /root/tools/Easy-P
 
 #################################### /privesc #########
 
@@ -224,10 +229,6 @@ echo "linux exoloit suggester 2の導入"
 cd /root/www/script
 wget https://raw.githubusercontent.com/jondonas/linux-exploit-suggester-2/master/linux-exploit-suggester-2.pl
 chmod 777 linux-exploit-suggester-2.pl
-
-echo "Windows exoloit suggesterの導入"
-cd /root/tools
-git clone https://github.com/bitsadmin/wesng
 
 echo "JAWSの導入"
 cd /tmp
