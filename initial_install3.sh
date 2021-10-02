@@ -58,32 +58,22 @@ cp -R /usr/share/windows-resources /var/www/html/windows-resources
 cp -R /usr/share/windows-binaries /var/www/html/windows-binaries 
 cp -R /usr/share/webshells /var/www/html/webshells 
 cp -R /usr/share/nishang /var/www/html/nishang
-mv /root/kali_conf/webshell/* /var/www/html/webshells
-mv /root/kali_conf/windows-binaries/Seatbelt.exe /var/www/html/windows/script
-mv /root/kali_conf/windows-binaries/SharpUp.exe /var/www/html/windows/script
-mv /root/kali_conf/windows-binaries/accesschk.exe /var/www/html/windows/script
-
-echo "Powercatの導入"
-sudo apt install powercat
 
 echo "Powersploitの導入"
 apt install powersploit
 
-
-#################################### /privesc #########
-
-
-
-
+cd /var/www/html/windows-script
+wget https://github.com/Otosan1554/kali_conf/blob/main/windows-binaries/Seatbelt.exe
+wget https://github.com/Otosan1554/kali_conf/blob/main/windows-binaries/SharpUp.exe
+wget https://github.com/Otosan1554/kali_conf/blob/main/windows-binaries/accesschk.exe
 
 
-echo "root/www配下を作成"
-cp -R /usr/share/windows-resources /root/www/windows-resources 
-cp -R /usr/share/windows-binaries /root/www/windows-binaries 
-cp -R /usr/share/windows-privesc-check /root/www/windows-privesc-check 
-cp -R /usr/share/webshells /root/www/webshells 
-cp -R /usr/share/nishang /root/www/nishang
-cp -R /usr/share/unix-privesc-check /root/www/unix-privesc-check 
+
+mv /root/kali_conf/webshell/* /var/www/html/webshells
+
+
+
+
 mv /root/kali_conf/webshell/* /root/www/webshells
 mv /root/kali_conf/script/* /root/www/script
 cp /root/www/windows-resources/powersploit/Privesc/PowerUp.ps1 /root/www/script
