@@ -1,0 +1,30 @@
+#!/usr/bin/bash
+
+echo "tools directory make or update"
+
+if [ -d /root/tools ]; then
+   echo ""
+else
+   mkdir /root/tools
+fi
+
+cd fir /root/tools
+
+wget https://raw.githubusercontent.com/Otosan1554/kali_conf/main/cplc.sh
+wget https://raw.githubusercontent.com/Otosan1554/kali_conf/main/tools/enum.sh
+wget https://raw.githubusercontent.com/Otosan1554/kali_conf/main/srccopy.sh
+
+mkdir /root/tools
+mkdir /root/www
+mkdir /root/www/privesc
+mkdir /root/www/script
+mkdir /root/www/revshell
+
+
+mv /root/kali_conf/cplc.sh /root/tools
+mv /root/kali_conf/vulnscan.sh /root/tools
+mv /root/kali_conf/tcpscan.sh /root/tools
+mv /root/kali_conf/udpscan.sh /root/tools
+mv /root/kali_conf/mount.sh /root/tools
+mv /root/kali_conf/srccopy.sh /root/tools
+mv /root/kali_conf/reverse_shellgen.sh /root/tools
