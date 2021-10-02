@@ -66,20 +66,6 @@ cp -R /usr/share/windows-binaries /var/www/html/windows-binaries
 cp -R /usr/share/webshells /var/www/html/webshells 
 cp -R /usr/share/nishang /var/www/html/nishang
 
-mv /root/kali_conf/webshell/* /var/www/html/webshells
-
-
-
-
-mv /root/kali_conf/webshell/* /root/www/webshells
-mv /root/kali_conf/script/* /root/www/script
-
-
-echo "BeRootの導入"
-cd /var/www/html/windows-script
-wget https://github.com/AlessandroZ/BeRoot/blob/master/Linux/beroot.py
-chmod 777 beroot.py
-
-echo "Windows exoloit suggesterの導入"
-cd /root/tools
-git clone https://github.com/bitsadmin/wesng
+cd /var/www/html/webshells
+wget https://github.com/Otosan1554/kali_conf/edit/main/webshell/backdoor.php
+wget https://github.com/Otosan1554/kali_conf/edit/main/webshell/php_webshell_examples
