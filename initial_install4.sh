@@ -61,13 +61,10 @@ wget https://raw.githubusercontent.com/411Hall/JAWS/master/jaws-enum.ps1
 
 echo "var/www/html配下を作成"
 cp -R /usr/share/windows-resources /var/www/html/windows-resources 
-cp /root/www/windows-resources/powersploit/Privesc/PowerUp.ps1 /root/www/script
+cp /var/www/html/windows-resources/powersploit/Privesc/PowerUp.ps1 /var/www/html/windows-script
 cp -R /usr/share/windows-binaries /var/www/html/windows-binaries 
 cp -R /usr/share/webshells /var/www/html/webshells 
 cp -R /usr/share/nishang /var/www/html/nishang
-
-
-
 
 mv /root/kali_conf/webshell/* /var/www/html/webshells
 
