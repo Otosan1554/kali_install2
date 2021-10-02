@@ -26,8 +26,8 @@ sudo msfdb init
 echo "Searchsploitの更新"
 sudo searchsploit -u
 
-#echo "ApacheをEnableにする"
-#sudo systemctl enable apache2
+echo "Apacheをdisableにする"
+sudo systemctl disable apache2
 
 echo "VNC Viewerのインストール"
 sudo apt-get install tigervnc-viewer
@@ -46,13 +46,6 @@ sudo apt install rinetd
 
 echo "Powercatの導入"
 sudo apt install powercat
-
-echo "Empireの導入"
-cd /root/tools
-git clone https://github.com/EmpireProject/Empire.git
-apt-get install libssl-dev swig python3-dev gcc
-cd /Empire/setup
-./install.sh
 
 echo "Shelterのインストール"
 sudo apt install shellter
@@ -81,11 +74,6 @@ rm -r /root/onetwopunch
 sudo chmod 777 /root/tools/onetwopunch.sh
 
 read -p "いったん確認"
-
-echo "windows-privsesc-checkの導入"
-rm -r /usr/share/windows-privesc-check
-cd /usr/share
-git clone https://github.com/pentestmonkey/windows-privesc-check.git
 
 echo "exifの導入"
 sudo apt install exif
@@ -125,17 +113,6 @@ git clone https://github.com/Dionach/CMSmap
 echo "Powersploitの導入"
 apt install powersploit
 
-echo "root/www配下を作成"
-cp -R /usr/share/windows-resources /root/www/windows-resources 
-cp -R /usr/share/windows-binaries /root/www/windows-binaries 
-cp -R /usr/share/windows-privesc-check /root/www/windows-privesc-check 
-cp -R /usr/share/webshells /root/www/webshells 
-cp -R /usr/share/nishang /root/www/nishang
-cp -R /usr/share/unix-privesc-check /root/www/unix-privesc-check 
-mv /root/kali_conf/webshell/* /root/www/webshells
-mv /root/kali_conf/script/* /root/www/script
-cp /root/www/windows-resources/powersploit/Privesc/PowerUp.ps1 /root/www/script
-
 echo "Easy-Pの導入"
 cd /root/tools
 rm -r /root/tools/Easy-P
@@ -149,6 +126,66 @@ apt install ffuf
 
 echo "terminaorの導入"
 apt install terminator
+
+echo "straceの導入"
+apt install strace
+
+echo "gimpの導入"
+apt install gimp
+
+echo "sipviciousの導入"
+apt install sipvicious
+
+echo "gunzip rockyou.txtを解凍します"
+gunzip /usr/share/wordlists/rockyou.txt.gz
+
+echo "smb.confのglobal セッティングに下記を追加してください"
+echo "client min protocol = core"
+
+echo "次のブラウザアドオンを導入します"
+echo "Web Developerアドオン"
+echo "Tamper Data"
+echo "Foxy Proxy"
+echo "User Agent Switcher"
+echo "Wappalyzer"
+
+
+#echo "Discoverの導入"
+#rm -r /home/kali/discover
+#git clone https://github.com/leebaird/discover.git /home/kali/discover
+#cd /home/kali/discover && ./update.sh
+
+#echo "OpenVASのインストールと起動"
+#apt install -y gvm 
+#gvm-setup
+#gvm-start
+
+
+#################################### /root/tools #########
+
+echo "Empireの導入"
+cd /root/tools
+git clone https://github.com/EmpireProject/Empire.git
+apt-get install libssl-dev swig python3-dev gcc
+cd /Empire/setup
+./install.sh
+
+#################################### /privesc #########
+
+echo "windows-privsesc-checkの導入"
+rm -r /usr/share/windows-privesc-check
+cd /usr/share
+git clone https://github.com/pentestmonkey/windows-privesc-check.git
+
+echo "Unix privesc checkerの導入"
+cd /root/www/script
+wget http://pentestmonkey.net/tools/unix-privesc-check/unix-privesc-check-1.4.tar.gz
+tar -zxvf unix-privesc-check-1.4.tar.gz
+cp /root/www/script/unix-privesc-check-1.4/unix-privesc-check /root/www/script
+mv /root/www/script/unix-privesc-check /root/www/script/unix-privesc-check.sh
+chmod 777 /root/www/script/unix-privesc-check.sh
+rm -R /root/www/script/unix-privesc-check-1.4/
+rm unix-privesc-check/unix-privesc-check-1.4.tar.gz
 
 echo "LinPEAS/winPEASの導入"
 cd /tmp
@@ -197,47 +234,14 @@ cd /tmp
 git clone https://github.com/411Hall/JAWS
 cp /tmp/JAWS/jaws-enum.ps1 /root/www/script
 
-echo "Unix privesc checkerの導入"
-cd /root/www/script
-wget http://pentestmonkey.net/tools/unix-privesc-check/unix-privesc-check-1.4.tar.gz
-tar -zxvf unix-privesc-check-1.4.tar.gz
-cp /root/www/script/unix-privesc-check-1.4/unix-privesc-check /root/www/script
-mv /root/www/script/unix-privesc-check /root/www/script/unix-privesc-check.sh
-chmod 777 /root/www/script/unix-privesc-check.sh
-rm -R /root/www/script/unix-privesc-check-1.4/
-rm unix-privesc-check/unix-privesc-check-1.4.tar.gz
-
-echo "straceの導入"
-apt install strace
-
-echo "gimpの導入"
-apt install gimp
-
-echo "sipviciousの導入"
-apt install sipvicious
-
-echo "gunzip rockyou.txtを解凍します"
-gunzip /usr/share/wordlists/rockyou.txt.gz
-
-echo "smb.confのglobal セッティングに下記を追加してください"
-echo "client min protocol = core"
-
-echo "次のブラウザアドオンを導入します"
-echo "Web Developerアドオン"
-echo "Tamper Data"
-echo "Foxy Proxy"
-echo "User Agent Switcher"
-echo "Wappalyzer"
-
-
-#echo "Discoverの導入"
-#rm -r /home/kali/discover
-#git clone https://github.com/leebaird/discover.git /home/kali/discover
-#cd /home/kali/discover && ./update.sh
-
-#echo "OpenVASのインストールと起動"
-#apt install -y gvm 
-#gvm-setup
-#gvm-start
-
+echo "root/www配下を作成"
+cp -R /usr/share/windows-resources /root/www/windows-resources 
+cp -R /usr/share/windows-binaries /root/www/windows-binaries 
+cp -R /usr/share/windows-privesc-check /root/www/windows-privesc-check 
+cp -R /usr/share/webshells /root/www/webshells 
+cp -R /usr/share/nishang /root/www/nishang
+cp -R /usr/share/unix-privesc-check /root/www/unix-privesc-check 
+mv /root/kali_conf/webshell/* /root/www/webshells
+mv /root/kali_conf/script/* /root/www/script
+cp /root/www/windows-resources/powersploit/Privesc/PowerUp.ps1 /root/www/script
 
