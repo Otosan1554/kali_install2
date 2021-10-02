@@ -2,20 +2,6 @@
 
 read -p "アンチウィルスを停止しましたか？"
 
-mkdir /root/tools
-mkdir /root/www
-mkdir /root/www/privesc
-mkdir /root/www/script
-mkdir /root/www/revshell
-
-mv /root/kali_conf/cplc.sh /root/tools
-mv /root/kali_conf/vulnscan.sh /root/tools
-mv /root/kali_conf/tcpscan.sh /root/tools
-mv /root/kali_conf/udpscan.sh /root/tools
-mv /root/kali_conf/mount.sh /root/tools
-mv /root/kali_conf/srccopy.sh /root/tools
-mv /root/kali_conf/reverse_shellgen.sh /root/tools
-
 echo "export PATH=$PATH:/root/tools" >> /root/.bashrc
 echo "export PATH=$PATH:/root/tools" >> /root/.zshrc
 
