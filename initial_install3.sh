@@ -29,6 +29,11 @@ mv /root/kali_conf/mount.sh /root/tools
 mv /root/kali_conf/srccopy.sh /root/tools
 mv /root/kali_conf/reverse_shellgen.sh /root/tools
 
+echo "BeRootの導入"
+cd /var/www/html/windows-script
+wget https://github.com/AlessandroZ/BeRoot/blob/master/Linux/beroot.py
+chmod 777 beroot.py
+
 
 #################################### /root/tools #########
 
@@ -71,7 +76,6 @@ echo "CMSmapの導入"
 rm -r /root/tools/CMSmap
 cd /root/tools
 git clone https://github.com/Dionach/CMSmap
-
 
 echo "Easy-Pの導入"
 cd /root/tools
