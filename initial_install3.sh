@@ -8,34 +8,22 @@ else
    mkdir /root/tools
 fi
 
-cd fir /root/tools
+cd dir /root/tools
 
-wget https://raw.githubusercontent.com/Otosan1554/kali_conf/main/cplc.sh
+wget https://raw.githubusercontent.com/Otosan1554/kali_conf/main/tools/cplc.sh
+wget https://raw.githubusercontent.com/Otosan1554/kali_conf/main/tools/dir_listing.sh
 wget https://raw.githubusercontent.com/Otosan1554/kali_conf/main/tools/enum.sh
-wget https://raw.githubusercontent.com/Otosan1554/kali_conf/main/srccopy.sh
-
-mkdir /root/tools
-mkdir /root/www
-mkdir /root/www/privesc
-mkdir /root/www/script
-mkdir /root/www/revshell
-
-
-mv /root/kali_conf/cplc.sh /root/tools
-mv /root/kali_conf/vulnscan.sh /root/tools
-mv /root/kali_conf/tcpscan.sh /root/tools
-mv /root/kali_conf/udpscan.sh /root/tools
-mv /root/kali_conf/mount.sh /root/tools
-mv /root/kali_conf/srccopy.sh /root/tools
-mv /root/kali_conf/reverse_shellgen.sh /root/tools
+wget https://raw.githubusercontent.com/Otosan1554/kali_conf/main/tools/hydra.sh
+wget https://raw.githubusercontent.com/Otosan1554/kali_conf/main/tools/mount.sh
+wget https://raw.githubusercontent.com/Otosan1554/kali_conf/main/tools/reverse_shellgen.sh
+wget https://raw.githubusercontent.com/Otosan1554/kali_conf/main/tools/srccopy.sh
+wget https://raw.githubusercontent.com/Otosan1554/kali_conf/main/tools/tcpscan.sh
+wget https://raw.githubusercontent.com/Otosan1554/kali_conf/main/tools/udoscan.sh
 
 echo "BeRootの導入"
 cd /var/www/html/windows-script
 wget https://github.com/AlessandroZ/BeRoot/blob/master/Linux/beroot.py
 chmod 777 beroot.py
-
-
-#################################### /root/tools #########
 
 echo "Empireの導入"
 cd /root/tools
