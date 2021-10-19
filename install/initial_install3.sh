@@ -63,11 +63,11 @@ echo "Heartbleed exploitの導入"
 cd /root/tools
 git clone https://github.com/sensepost/heartbleed-poc.git
 
-echo "SMBexecの導入"
-rm -r /root/tools/smbexec
-git clone https://github.com/brav0hax/smbexec.git /root/tools/smbexec
-cd smbexec
-./install.sh
+# echo "SMBexecの導入"
+# rm -r /root/tools/smbexec
+# git clone https://github.com/brav0hax/smbexec.git /root/tools/smbexec
+# cd smbexec
+# ./install.sh
 
 echo "CMSmapの導入"
 rm -r /root/tools/CMSmap
