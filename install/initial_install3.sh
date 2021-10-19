@@ -10,23 +10,40 @@ fi
 
 cd /root/tools
 
+rm cplc.sh
 wget https://raw.githubusercontent.com/Otosan1554/kali_conf/main/tools/cplc.sh
 chmod 777 cplc.sh
+
+rm dir_listing.sh
 wget https://raw.githubusercontent.com/Otosan1554/kali_conf/main/tools/dir_listing.sh
 chmod 777 dir_listing.sh
+
+rm enum.sh
 wget https://raw.githubusercontent.com/Otosan1554/kali_conf/main/tools/enum.sh
 chmod 777 enum.sh
+
+rm hydra.sh
 wget https://raw.githubusercontent.com/Otosan1554/kali_conf/main/tools/hydra.sh
 chmod 777 hydra.sh
+
+rm mount.sh
 wget https://raw.githubusercontent.com/Otosan1554/kali_conf/main/tools/mount.sh
 chmod 777 mount.sh
+
+rm reverse_shellgen.sh
 wget https://raw.githubusercontent.com/Otosan1554/kali_conf/main/tools/reverse_shellgen.sh
 chmod 777 reverse_shellgen.sh
+
+rm srccopy.sh
 wget https://raw.githubusercontent.com/Otosan1554/kali_conf/main/tools/srccopy.sh
 chmod 777 srccopy.sh
+
+rm tcpscan.sh
 wget https://raw.githubusercontent.com/Otosan1554/kali_conf/main/tools/tcpscan.sh
 chmod 777 tcpscan.sh
-wget https://raw.githubusercontent.com/Otosan1554/kali_conf/main/tools/udoscan.sh
+
+rm udpscan.sh
+wget https://raw.githubusercontent.com/Otosan1554/kali_conf/main/tools/udpscan.sh
 chmod 777 udpscan.sh
 
 #echo "BeRootの導入"
