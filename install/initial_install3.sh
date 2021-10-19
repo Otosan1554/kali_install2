@@ -8,7 +8,7 @@ else
    mkdir /root/tools
 fi
 
-cd dir /root/tools
+cd /root/tools
 
 wget https://raw.githubusercontent.com/Otosan1554/kali_conf/main/tools/cplc.sh
 chmod 777 cplc.sh
