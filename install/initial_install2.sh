@@ -96,6 +96,9 @@ apt install terminator
 echo "straceの導入"
 apt install strace
 
+echo "smtp-user-enumの導入"
+apt install smtp-user-enum
+
 echo "gimpの導入"
 apt install gimp
 
