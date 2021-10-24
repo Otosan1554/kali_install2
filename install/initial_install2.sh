@@ -99,6 +99,9 @@ apt install strace
 echo "smtp-user-enumの導入"
 apt install smtp-user-enum
 
+echo "default-mysql-clientの導入"
+apt install default-mysql-client
+
 echo "gimpの導入"
 apt install gimp
 
