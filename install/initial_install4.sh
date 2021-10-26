@@ -64,6 +64,11 @@ wget https://raw.githubusercontent.com/411Hall/JAWS/master/jaws-enum.ps1
 
 echo "var/www/html配下を作成"
 
+rm -R /var/www/html/windows-resources
+rm -R /var/www/html/windows-binaries
+rm -R /var/www/html/webshells
+rm /var/www/html/nishang
+
 cp -R /usr/share/windows-resources /var/www/html/windows-resources 
 cp /var/www/html/windows-resources/powersploit/Privesc/PowerUp.ps1 /var/www/html/windows-script
 cp -R /usr/share/windows-binaries /var/www/html/windows-binaries 
@@ -71,5 +76,8 @@ cp -R /usr/share/webshells /var/www/html/webshells
 cp -R /usr/share/nishang /var/www/html/nishang
 
 cd /var/www/html/webshells
+rm backdoor.php
+rm php_webshell_examples
+
 wget https://raw.githubusercontent.com/Otosan1554/kali_conf/main/webshell/backdoor.php
 wget https://raw.githubusercontent.com/Otosan1554/kali_conf/main/webshell/php_webshell_examples
