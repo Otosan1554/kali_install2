@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-mkdir /var/www/html/windows-script
+rm -R /var/www/html/linux-script
 mkdir /var/www/html/linux-script
 
 echo "Linenumの導入"
@@ -39,6 +39,9 @@ cd /var/www/html/linux-script
 wget https://raw.githubusercontent.com/Otosan1554/kali_conf/main/linux-script/script_linux.sh
 chmod 777 script_linux.sh
 
+rm -R /var/www/html/windows-script
+mkdir /var/www/html/windows-script
+
 echo "winPEASの導入"
 cd /var/www/html/windows-script
 wget https://github.com/carlospolop/PEASS-ng/blob/master/winPEAS/winPEASexe/binaries/x64/Release/winPEASx64.exe
@@ -60,6 +63,7 @@ cd /var/www/html/windows-script
 wget https://raw.githubusercontent.com/411Hall/JAWS/master/jaws-enum.ps1
 
 echo "var/www/html配下を作成"
+
 cp -R /usr/share/windows-resources /var/www/html/windows-resources 
 cp /var/www/html/windows-resources/powersploit/Privesc/PowerUp.ps1 /var/www/html/windows-script
 cp -R /usr/share/windows-binaries /var/www/html/windows-binaries 
@@ -67,5 +71,5 @@ cp -R /usr/share/webshells /var/www/html/webshells
 cp -R /usr/share/nishang /var/www/html/nishang
 
 cd /var/www/html/webshells
-wget https://github.com/Otosan1554/kali_conf/edit/main/webshell/backdoor.php
-wget https://github.com/Otosan1554/kali_conf/edit/main/webshell/php_webshell_examples
+wget https://raw.githubusercontent.com/Otosan1554/kali_conf/main/webshell/backdoor.php
+wget https://raw.githubusercontent.com/Otosan1554/kali_conf/main/webshell/php_webshell_examples
