@@ -53,6 +53,7 @@ chmod 777 udpscan.sh
 
 echo "Empireの導入"
 cd /root/tools
+rm -R Empire
 git clone https://github.com/EmpireProject/Empire.git
 apt-get install libssl-dev swig python3-dev gcc
 cd /Empire/setup
@@ -60,6 +61,7 @@ cd /Empire/setup
 
 echo "Windows exoloit suggesterの導入"
 cd /root/tools
+rm -R wesng
 git clone https://github.com/bitsadmin/wesng
 
 echo "onetwopunchの導入"
@@ -72,26 +74,28 @@ sudo chmod 777 /root/tools/onetwopunch.sh
 
 echo "bruteforce-http-authの導入"
 cd /root/tools
+rm -R bruteforce-http-auth
 git clone https://github.com/erforschr/bruteforce-http-auth.git
 cd bruteforce-http-auth
 python3 -m pip install -r requirements.txt
 
 echo "Heartbleed exploitの導入"
 cd /root/tools
+rm -R heartbleed-poc
 git clone https://github.com/sensepost/heartbleed-poc.git
 
 # echo "SMBexecの導入"
-# rm -r /root/tools/smbexec
+# rm -R /root/tools/smbexec
 # git clone https://github.com/brav0hax/smbexec.git /root/tools/smbexec
 # cd smbexec
 # ./install.sh
 
 echo "CMSmapの導入"
-rm -r /root/tools/CMSmap
+rm -R /root/tools/CMSmap
 cd /root/tools
 git clone https://github.com/Dionach/CMSmap
 
 echo "Easy-Pの導入"
 cd /root/tools
-rm -r /root/tools/Easy-P
+rm -R /root/tools/Easy-P
 git clone https://github.com/cheetz/Easy-P.git /root/tools/Easy-P
