@@ -15,6 +15,11 @@ sudo apt-get install fonts-vlgothic
 echo "geditの導入"
 apt install gedit
 
+echo "chromeの導入"
+cd /tmp
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+apt install ./google-chrome-stable_current_amd64.deb
+
 echo "BackdoorFactoryの導入"
 apt install backdoor-factory
 
