@@ -99,3 +99,7 @@ echo "Easy-Pの導入"
 cd /root/tools
 rm -R /root/tools/Easy-P
 git clone https://github.com/cheetz/Easy-P.git /root/tools/Easy-P
+
+echo "hash-id.pyの導入"
+cd /root/tools
+wget https://gitlab.com/kalilinux/packages/hash-identifier/-/raw/kali/master/hash-id.py
