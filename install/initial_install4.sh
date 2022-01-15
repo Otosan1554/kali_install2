@@ -58,6 +58,12 @@ wget https://github.com/Otosan1554/kali_conf/blob/main/windows-binaries/Seatbelt
 wget https://github.com/Otosan1554/kali_conf/blob/main/windows-binaries/SharpUp.exe
 wget https://github.com/Otosan1554/kali_conf/blob/main/windows-binaries/accesschk.exe
 
+echo "socat executablesの導入"
+rm -R /var/www/html/linux-binaries
+mkdir /var/www/html/linux-binaries
+cd /var/www/html/linux-binaries
+wget https://github.com/Otosan1554/kali_conf/blob/main/linux-binaries/socat
+
 echo "JAWSの導入"
 cd /var/www/html/windows-script
 wget https://raw.githubusercontent.com/411Hall/JAWS/master/jaws-enum.ps1
@@ -65,14 +71,16 @@ wget https://raw.githubusercontent.com/411Hall/JAWS/master/jaws-enum.ps1
 echo "var/www/html配下を作成"
 
 rm -R /var/www/html/windows-resources
-rm -R /var/www/html/windows-binaries
-rm -R /var/www/html/webshells
-rm /var/www/html/nishang
-
 cp -R /usr/share/windows-resources /var/www/html/windows-resources 
 cp /var/www/html/windows-resources/powersploit/Privesc/PowerUp.ps1 /var/www/html/windows-script
+
+rm -R /var/www/html/windows-binaries
 cp -R /usr/share/windows-binaries /var/www/html/windows-binaries 
+
+rm -R /var/www/html/webshells
 cp -R /usr/share/webshells /var/www/html/webshells 
+
+rm /var/www/html/nishang
 cp -R /usr/share/nishang /var/www/html/nishang
 
 cd /var/www/html/webshells
