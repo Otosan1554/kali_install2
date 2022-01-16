@@ -41,7 +41,7 @@ do
    fi
    echo "<<<   Start Level$level $count/$sousu  $url'FUZZ'   >>>"
    count=$((count += 1))
-   ffuf -s -w /tmp/dirbuster_$IP/common.txt -mc 200,204,301,302,307,401,403,405 -t 40 -u  $url'FUZZ' > /tmp/dirbuster_$IP/url_level$level_new'_temp'
+   ffuf -s -w /tmp/dirbuster_$IP/common.txt -mc 200,204,301,302,307,401,403,405 -t 40 -e .htm,.shtml,.php,.html,.js,.txt,.zip,.bak,.asp,.aspx,.xml -u  $url'FUZZ' > /tmp/dirbuster_$IP/url_level$level_new'_temp'
    for url1 in $(cat /tmp/dirbuster_$IP/url_level$level_new'_temp')
    do
       flg='n'
