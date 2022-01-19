@@ -57,6 +57,7 @@ cd /var/www/html/windows-script
 wget https://github.com/Otosan1554/kali_conf/blob/main/windows-binaries/Seatbelt.exe
 wget https://github.com/Otosan1554/kali_conf/blob/main/windows-binaries/SharpUp.exe
 wget https://github.com/Otosan1554/kali_conf/blob/main/windows-binaries/accesschk.exe
+wget https://github.com/Otosan1554/kali_conf/blob/main/windows-script/script_windows.bat
 
 echo "socat executablesの導入"
 rm -R /var/www/html/linux-binaries
