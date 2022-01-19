@@ -46,6 +46,9 @@ rm udpscan.sh
 wget https://raw.githubusercontent.com/Otosan1554/kali_conf/main/tools/udpscan.sh
 chmod 777 udpscan.sh
 
+rm memo
+wget https://raw.githubusercontent.com/Otosan1554/kali_conf/main/tools/memo
+
 #echo "BeRootの導入"
 #cd /var/www/html/windows-script
 #wget https://github.com/AlessandroZ/BeRoot/blob/master/Linux/beroot.py
