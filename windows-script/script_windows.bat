@@ -20,7 +20,7 @@ exit /B
 
 :HELPTXT
 echo "powershell -ep bypass"
-echo ". .\powerup.ps"
+echo ". .\PowerUp.ps1"
 echo "Invoke-AllChecks"
 
 exit /B
