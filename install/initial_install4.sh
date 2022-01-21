@@ -1,5 +1,7 @@
 #!/usr/bin/bash
 
+"デフォルトのブラウザをFirefoxにする"
+
 echo "linux-scriptディレクトリの作成"
 rm -R /var/www/html/linux-script
 mkdir /var/www/html/linux-script
