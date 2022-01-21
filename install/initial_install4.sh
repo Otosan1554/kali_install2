@@ -1,5 +1,6 @@
 #!/usr/bin/bash
 
+echo "linux-scriptディレクトリの作成"
 rm -R /var/www/html/linux-script
 mkdir /var/www/html/linux-script
 
@@ -39,31 +40,38 @@ cd /var/www/html/linux-script
 wget https://raw.githubusercontent.com/Otosan1554/kali_conf/main/linux-script/script_linux.sh
 chmod 777 script_linux.sh
 
+echo "windows-scriptディレクトリの作成"
 rm -R /var/www/html/windows-script
 mkdir /var/www/html/windows-script
 
-echo "winPEASの導入"
-cd /var/www/html/windows-script
-wget https://github.com/carlospolop/PEASS-ng/blob/master/winPEAS/winPEASexe/binaries/x64/Release/winPEASx64.exe
-wget https://github.com/carlospolop/PEASS-ng/blob/master/winPEAS/winPEASexe/binaries/x86/Release/winPEASx86.exe
-wget https://github.com/carlospolop/PEASS-ng/blob/master/winPEAS/winPEASexe/binaries/Release/winPEASany.exe
+echo "winPEAS（winPEASx64.exe/winPEASx86.exe/winPEASany.exe）を導入します"
+read -p "https://github.com/carlospolop/PEASS-ng/releases/tag/refs/pull/260/merge"
+read -p "cp /root/Downloads/winPEAS* /var/www/html/windows-script/"
 
-echo "windows-privsesc-checkの導入"
-cd /var/www/html/windows-script
-wget https://github.com/pentestmonkey/windows-privesc-check/blob/master/windows-privesc-check2.exe
+echo "windows-privsesc-checkを導入します"
+read -p "https://github.com/pentestmonkey/windows-privesc-check/blob/master/windows-privesc-check2.exe"
+read -p "cp /root/Downloads/windows-privesc-check2.exe /var/www/html/windows-script/"
 
-echo "windows executablesの導入"
-cd /var/www/html/windows-script
-wget https://github.com/Otosan1554/kali_conf/blob/main/windows-binaries/Seatbelt.exe
-wget https://github.com/Otosan1554/kali_conf/blob/main/windows-binaries/SharpUp.exe
-wget https://github.com/Otosan1554/kali_conf/blob/main/windows-binaries/accesschk.exe
+echo "Seatbelt.exeの導入"
+read -p "https://github.com/r3motecontrol/Ghostpack-CompiledBinaries/blob/master/Seatbelt.exe"
+read -p "cp /root/Downloads/Seatbelt.exe /var/www/html/windows-script/"
+
+echo "SharpUp.exeの導入"
+read -p "https://github.com/r3motecontrol/Ghostpack-CompiledBinaries/blob/master/SharpUp.exe"
+read -p "cp /root/Downloads/SharpUp.exe /var/www/html/windows-script/"
+
+echo "accesschk.exeの導入"
+read -p "https://docs.microsoft.com/en-us/sysinternals/downloads/accesschk"
+read -p "unzip /root/Downloads/accesschk.zip"
+read -p "cp /root/Downloads/accesschk.exe /var/www/html/windows-script/"
+read -p "cp /root/Downloads/accesschk64.exe /var/www/html/windows-script/"
+
+echo "Powerless.batの導入"
+read -p "https://github.com/gladiatx0r/Powerless"
+read -p "cp /root/Downloads/Powerless.bat /var/www/html/windows-script/"
+
+echo "script_windows.batの導入"
 wget https://github.com/Otosan1554/kali_conf/blob/main/windows-script/script_windows.bat
-
-echo "socat executablesの導入"
-rm -R /var/www/html/linux-binaries
-mkdir /var/www/html/linux-binaries
-cd /var/www/html/linux-binaries
-wget https://github.com/Otosan1554/kali_conf/blob/main/linux-binaries/socat
 
 echo "JAWSの導入"
 cd /var/www/html/windows-script
