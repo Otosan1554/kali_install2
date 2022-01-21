@@ -85,6 +85,7 @@ read -p "mv /root/Downloads/Powerless.bat /var/www/html/windows-script/"
 mv /root/Downloads/Powerless.bat /var/www/html/windows-script/
 
 echo "script_windows.batの導入"
+cd /var/www/html/windows-script
 wget https://github.com/Otosan1554/kali_conf/blob/main/windows-script/script_windows.bat
 
 echo "JAWSの導入"
