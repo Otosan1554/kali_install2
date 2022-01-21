@@ -86,6 +86,7 @@ mv /root/Downloads/Powerless.bat /var/www/html/windows-script/
 
 echo "script_windows.batの導入"
 cd /var/www/html/windows-script
+rm script_windows.bat
 wget https://github.com/Otosan1554/kali_conf/blob/main/windows-script/script_windows.bat
 
 echo "JAWSの導入"
@@ -104,7 +105,7 @@ cp -R /usr/share/windows-binaries /var/www/html/windows-binaries
 rm -R /var/www/html/webshells
 cp -R /usr/share/webshells /var/www/html/webshells 
 
-rm /var/www/html/nishang
+rm -R /var/www/html/nishang
 cp -R /usr/share/nishang /var/www/html/nishang
 
 cd /var/www/html/webshells
