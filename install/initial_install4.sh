@@ -62,7 +62,7 @@ read -p "mv /root/Downloads/SharpUp.exe /var/www/html/windows-script/"
 
 echo "accesschk.exeの導入"
 read -p "https://docs.microsoft.com/en-us/sysinternals/downloads/accesschk"
-read -p "unzip /root/Downloads/accesschk.zip"
+read -p "unzip /root/Downloads/AccessChk.zip"
 read -p "mv /root/Downloads/accesschk* /var/www/html/windows-script/"
 
 echo "Powerless.batの導入"
