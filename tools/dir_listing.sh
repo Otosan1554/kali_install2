@@ -142,7 +142,7 @@ fi
 
 echo $url_m > /tmp/dirbuster_$IP_m/url_level0
 
-rm /root/Lab/$IP_m/dirbuster/wordlist_temp
+rm /tmp/dirbuster_$IP_m/wordlist_temp
 
 wlistgen $IP_m 0
 cat /tmp/dirbuster_$IP_m/wordlist_level1 > /tmp/dirbuster_$IP_m/wordlist_temp
