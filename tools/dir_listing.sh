@@ -162,6 +162,7 @@ sort -u /tmp/dirbuster_$IP_m/wordlist_temp
 
 dirb $url_m /tmp/dirbuster_$IP_m/wordlist_temp -o /tmp/dirbuster_$IP_m/tcp_$port'_'$protocol'_dirb'$addurl'.txt'
 
+rm -R /root/Lab/$IP_m 
+cp -R /tmp/dirbuster_$IP_m/ /root/Lab/$IP_m
+
 rm /tmp/dirbuster_$IP_m/wordlist_temp
-
-
