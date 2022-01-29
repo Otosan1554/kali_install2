@@ -12,9 +12,11 @@ wget https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh
 chmod 777 LinEnum.sh
 
 echo "LinPEASの導入"
-cd /var/www/html/linux-script
-wget https://raw.githubusercontent.com/carlospolop/PEASS-ng/master/linPEAS/linpeas.sh
-chmod 777 linpeas.sh
+read -p "次のページからlinpeasをダウンロードします(複数)"
+xdg-open https://github.com/carlospolop/PEASS-ng/releases/tag/refs/pull/260/merge
+#read -p "mv /root/Downloads/winPEAS* /var/www/html/windows-script/"
+mv /root/Downloads/linpeas* /var/www/html/linux-script/
+chmod 777 /var/www/html/linux-script/linpeas*
 
 echo "linux exoloit suggester 2の導入"
 cd /var/www/html/linux-script
@@ -47,31 +49,36 @@ rm -R /var/www/html/windows-script
 mkdir /var/www/html/windows-script
 
 echo "winPEAS（winPEASx64.exe/winPEASx86.exe/winPEASany.exe）を導入します"
-read -p "xdg-open https://github.com/carlospolop/PEASS-ng/releases/tag/refs/pull/260/merge"
+read -p "次のページからwinPEASをダウンロードします（複数）"
+#read -p "xdg-open https://github.com/carlospolop/PEASS-ng/releases/tag/refs/pull/260/merge"
 xdg-open https://github.com/carlospolop/PEASS-ng/releases/tag/refs/pull/260/merge
 read -p "mv /root/Downloads/winPEAS* /var/www/html/windows-script/"
 mv /root/Downloads/winPEAS* /var/www/html/windows-script/
 
 echo "windows-privsesc-checkを導入します"
-read -p "xdg-open https://github.com/pentestmonkey/windows-privesc-check/blob/master/windows-privesc-check2.exe"
+read -p "次のページからwindows-privesc-check2.exeをダウンロードします"
+#read -p "xdg-open https://github.com/pentestmonkey/windows-privesc-check/blob/master/windows-privesc-check2.exe"
 xdg-open https://github.com/pentestmonkey/windows-privesc-check/blob/master/windows-privesc-check2.exe
 read -p "mv /root/Downloads/windows-privesc-check2.exe /var/www/html/windows-script/"
 mv /root/Downloads/windows-privesc-check2.exe /var/www/html/windows-script/
 
 echo "Seatbelt.exeの導入"
-read -p "xdg-open https://github.com/r3motecontrol/Ghostpack-CompiledBinaries/blob/master/Seatbelt.exe"
+read -p "次のページからSeatbelt.exeをダウンロードします"
+#read -p "xdg-open https://github.com/r3motecontrol/Ghostpack-CompiledBinaries/blob/master/Seatbelt.exe"
 xdg-open https://github.com/r3motecontrol/Ghostpack-CompiledBinaries/blob/master/Seatbelt.exe
 read -p "mv /root/Downloads/Seatbelt.exe /var/www/html/windows-script/"
 mv /root/Downloads/Seatbelt.exe /var/www/html/windows-script/
 
 echo "SharpUp.exeの導入"
-read -p "xdg-open https://github.com/r3motecontrol/Ghostpack-CompiledBinaries/blob/master/SharpUp.exe"
+read -p "次のページからSharpUp.exeをダウンロードします"
+#read -p "xdg-open https://github.com/r3motecontrol/Ghostpack-CompiledBinaries/blob/master/SharpUp.exe"
 xdg-open https://github.com/r3motecontrol/Ghostpack-CompiledBinaries/blob/master/SharpUp.exe
 read -p "mv /root/Downloads/SharpUp.exe /var/www/html/windows-script/"
 mv /root/Downloads/SharpUp.exe /var/www/html/windows-script/
 
 echo "accesschk.exeの導入"
-read -p "xdg-open https://docs.microsoft.com/en-us/sysinternals/downloads/accesschk"
+read -p "次のページからAccessChkをダウンロードします"
+#read -p "xdg-open https://docs.microsoft.com/en-us/sysinternals/downloads/accesschk"
 xdg-open https://docs.microsoft.com/en-us/sysinternals/downloads/accesschk
 read -p "cd /root/Downloads; unzip /root/Downloads/AccessChk.zip"
 read -p "mv /root/Downloads/accesschk* /var/www/html/windows-script/"
@@ -79,7 +86,8 @@ cd /root/Downloads; unzip /root/Downloads/AccessChk.zip
 mv /root/Downloads/accesschk* /var/www/html/windows-script/
 
 echo "Powerless.batの導入"
-read -p "xdg-open https://github.com/gladiatx0r/Powerless"
+read -p "次のページからPowerless.batをダウンロードします"
+#read -p "xdg-open https://github.com/gladiatx0r/Powerless"
 xdg-open https://github.com/gladiatx0r/Powerless
 read -p "mv /root/Downloads/Powerless.bat /var/www/html/windows-script/"
 mv /root/Downloads/Powerless.bat /var/www/html/windows-script/
