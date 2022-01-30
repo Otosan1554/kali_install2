@@ -85,6 +85,16 @@ read -p "mv /root/Downloads/accesschk* /var/www/html/windows-script/"
 cd /root/Downloads; unzip /root/Downloads/AccessChk.zip
 mv /root/Downloads/accesschk* /var/www/html/windows-script/
 
+echo "Autoruns.exeの導入"
+read -p "次のページからAutorunsをダウンロードします"
+xdg-open https://docs.microsoft.com/ja-jp/sysinternals/downloads/autoruns
+read -p "cd /root/Downloads; unzip /root/Downloads/Autoruns.zip"
+read -p "mv /root/Downloads/autoruns* /var/www/html/windows-script/"
+read -p "mv /root/Downloads/Autoruns* /var/www/html/windows-script/"
+cd /root/Downloads; unzip /root/Downloads/Autoruns.zip
+mv /root/Downloads/autoruns* /var/www/html/windows-script/
+mv /root/Downloads/Autoruns* /var/www/html/windows-script/
+
 echo "Powerless.batの導入"
 read -p "次のページからPowerless.batをダウンロードします"
 #read -p "xdg-open https://github.com/gladiatx0r/Powerless"
