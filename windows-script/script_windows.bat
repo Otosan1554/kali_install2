@@ -58,7 +58,7 @@ echo 6:windows-privesc-check2
 echo 7:winPEASany
 echo 8:winPEASx64
 echo 9:winPEASx86
-echo 10:winPEASx86
+echo 10:winPEAS.bat
 exit /B
 
 :HELPTXT
