@@ -107,6 +107,11 @@ cd /var/www/html/windows-script
 rm script_windows.bat
 wget https://github.com/Otosan1554/kali_conf/blob/main/windows-script/script_windows.bat
 
+echo "hijackdll.cの導入"
+cd /var/www/html/windows-script
+rm hijackdll.c
+wget https://github.com/Otosan1554/kali_conf/blob/main/windows-script/hijackdll.c
+
 echo "JAWSの導入"
 cd /var/www/html/windows-script
 wget https://raw.githubusercontent.com/411Hall/JAWS/master/jaws-enum.ps1
