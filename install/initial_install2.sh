@@ -69,6 +69,7 @@ apt install nikto
 
 echo "pipの導入"
 apt install python3-pip
+apt install python-pip 
 
 echo "Autoreconの導入"
 pip install git+https://github.com/Tib3rius/AutoRecon.git
