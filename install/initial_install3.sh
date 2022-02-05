@@ -62,10 +62,15 @@ apt-get install libssl-dev swig python3-dev gcc
 cd /Empire/setup
 ./install.sh
 
-echo "Windows exoloit suggesterの導入"
+echo "Windows exoloit suggester-NGの導入"
 cd /root/tools
 rm -R wesng
 git clone https://github.com/bitsadmin/wesng
+
+echo "Windows exoloit suggesterの導入"
+cd /root/tools
+rm -R Windows-Exploit-Suggester
+git clone https://github.com/AonCyberLabs/Windows-Exploit-Suggester.git
 
 echo "onetwopunchの導入"
 rm /root/onetwopunch.sh
