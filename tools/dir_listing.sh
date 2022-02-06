@@ -119,7 +119,7 @@ else
 fi
 
 echo "<------------------- Robots.txt ------------------------->"
-curl $protocol://$IP_m/$port/robots.txt
+curl $protocol://$IP_m:$port/robots.txt
 echo "<------------------- Robots.txt ------------------------->"
 
 cp /usr/share/seclists/Discovery/Web-Content/common.txt /tmp/dirbuster_$IP_m/common.txt 
