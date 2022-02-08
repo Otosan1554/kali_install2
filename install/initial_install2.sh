@@ -21,11 +21,6 @@ apt install kazam
 echo "xfreedpの導入"
 apt install freerdp2-x11 freerdp2-shadow-x11
 
-echo "chromeの導入"
-cd /tmp
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-apt install ./google-chrome-stable_current_amd64.deb
-
 echo "BackdoorFactoryの導入"
 apt install backdoor-factory
 
