@@ -123,17 +123,6 @@ apt install sipvicious
 echo "gunzip rockyou.txtを解凍します"
 gunzip /usr/share/wordlists/rockyou.txt.gz
 
-echo "smb.confのglobal セッティングに下記を追加してください"
-echo "client min protocol = core"
-
-echo "次のブラウザアドオンを導入します"
-echo "Web Developerアドオン"
-echo "Tamper Data"
-echo "Foxy Proxy"
-echo "User Agent Switcher"
-echo "Wappalyzer"
-
-
 #echo "Discoverの導入"
 #rm -r /home/kali/discover
 #git clone https://github.com/leebaird/discover.git /home/kali/discover
