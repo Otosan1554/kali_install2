@@ -12,9 +12,6 @@ echo "Font 入れ替え"
 sudo apt-get remove fonts-vlgothic
 sudo apt-get install fonts-vlgothic
 
-echo "geditの導入"
-apt install gedit
-
 echo "kazamの導入"
 apt install kazam
 
