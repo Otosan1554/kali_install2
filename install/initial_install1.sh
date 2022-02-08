@@ -5,6 +5,11 @@ read -p "アンチウィルスを停止しましたか？"
 echo "ソースリストの更新"
 sudo apt -y update 
 
+echo "chromeの導入"
+cd /tmp
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+apt install ./google-chrome-stable_current_amd64.deb
+
 read -p "kali/kaliにログインします"
 read -p "sudo passwd root します"
 read -p "キーボードに日本語を選択します"
@@ -34,7 +39,6 @@ read -p "Github、TryHackMeのログイン情報を登録します"
 echo "seclistsの導入"
 sudo apt-get install seclists
 
-
 #echo "OpenVASのインストールと起動"
 #apt install -y gvm 
 #gvm-setup
@@ -44,5 +48,3 @@ sudo apt-get install seclists
 #rm -r /home/kali/discover
 #git clone https://github.com/leebaird/discover.git /home/kali/discover
 #cd /home/kali/discover && ./update.sh
-
-
