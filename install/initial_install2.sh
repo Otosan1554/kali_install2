@@ -67,7 +67,12 @@ cd /tmp
 rm get-pip.py
 curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
 python2 get-pip.py
+pip2 install --upgrade setuptools 
 apt install python3-pip
+
+echo "impacketの導入"
+python2 -m pip install impacket
+pip install impacket
 
 echo "Autoreconの導入"
 pip install git+https://github.com/Tib3rius/AutoRecon.git
