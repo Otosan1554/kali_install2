@@ -14,7 +14,7 @@ chmod 777 LinEnum.sh
 echo "LinPEASの導入"
 read -p "次のページからlinpeasをダウンロードします(複数)"
 xdg-open https://github.com/carlospolop/PEASS-ng/releases/tag/refs/pull/260/merge
-#read -p "mv /root/Downloads/winPEAS* /var/www/html/windows-script/"
+read -p "mv /root/Downloads/winPEAS* /var/www/html/windows-script/"
 mv /root/Downloads/linpeas* /var/www/html/linux-script/
 chmod 777 /var/www/html/linux-script/linpeas*
 
