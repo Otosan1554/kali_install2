@@ -75,7 +75,7 @@ python2 -m pip install impacket
 pip install impacket
 
 echo "Autoreconの導入"
-pip install git+https://github.com/Tib3rius/AutoRecon.git
+pip3 install git+https://github.com/Tib3rius/AutoRecon.git
 
 read -p "いったん確認"
 
