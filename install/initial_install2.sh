@@ -63,8 +63,11 @@ echo "niktoの導入"
 apt install nikto
 
 echo "pipの導入"
+cd /tmp
+rm get-pip.py
+curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
+python2 get-pip.py
 apt install python3-pip
-apt install python-pip 
 
 echo "Autoreconの導入"
 pip install git+https://github.com/Tib3rius/AutoRecon.git
