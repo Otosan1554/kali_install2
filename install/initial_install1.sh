@@ -29,9 +29,6 @@ read -p "Burpの証明書をFirefoxに設定します"
 read -p "Github、TryHackMeのログイン情報を登録します"
 read -p "rootにログインします"
 
-echo "seclistsの導入"
-sudo apt-get install seclists
-
 #echo "OpenVASのインストールと起動"
 #apt install -y gvm 
 #gvm-setup
