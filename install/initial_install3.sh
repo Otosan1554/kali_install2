@@ -17,6 +17,8 @@ apt install kazam
 
 echo "pure-ftpdの導入"
 apt -y install pure-ftpd
+useradd ftp
+mkdir /home/ftp
 echo "no" > /etc/pure-ftpd/conf/NoAnonymous
 echo "no" > /etc/pure-ftpd/conf/PAMAuthentication
 #systemctl start pure-ftpd
