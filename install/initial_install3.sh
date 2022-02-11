@@ -123,10 +123,8 @@ apt install sipvicious
 echo "gunzip rockyou.txtを解凍します"
 gunzip /usr/share/wordlists/rockyou.txt.gz
 
-#echo "Discoverの導入"
-#rm -r /home/kali/discover
-#git clone https://github.com/leebaird/discover.git /home/kali/discover
-#cd /home/kali/discover && ./update.sh
+echo "seclistsの導入"
+sudo apt-get install seclists
 
 #echo "OpenVASのインストールと起動"
 #apt install -y gvm 
