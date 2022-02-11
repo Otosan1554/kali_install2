@@ -120,6 +120,9 @@ apt install gimp
 echo "sipviciousの導入"
 apt install sipvicious
 
+echo "ZAPの導入"
+apt -y install zaproxy
+
 echo "gunzip rockyou.txtを解凍します"
 gunzip /usr/share/wordlists/rockyou.txt.gz
 
