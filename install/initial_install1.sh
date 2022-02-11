@@ -1,5 +1,6 @@
 #!/usr/bin/bash
 
+read -p "メモリを追加しましたか？"
 read -p "アンチウィルスを停止しましたか？"
 
 echo "ソースリストの更新"
@@ -23,19 +24,21 @@ read -p "エディタ(gedit)の背景を白にし、Favoriteに追加します"
 read -p "FirefoxとChromeをFavoriteに追加します"
 read -p "Settings>Power Manger>Securityタブからスクリーンセーバーを非有効化します"
 read -p "smb.confのglobalセクションに client min protocol = core を追加します"
-read -p "Firefoxのブラウザアドオンを導入します Web Developer/Tamper Data/Foxy Proxy/User Agent Switcher/Wappalyzer"
+read -p "Firefoxのブラウザアドオンを導入します Foxy Proxy/Wappalyzer"
 read -p "Burpの証明書をFirefoxに設定します"
 read -p "Github、TryHackMeのログイン情報を登録します"
-
 read -p "rootにログインします"
+
 read -p "キーボードに日本語を選択します"
 read -p "右上のタイム表示を右クリックし、プロパティでタイムゾーンを変更します"
 read -p "terminalの背景を白にします"
 read -p "エディタ(mousepad)の背景を白にし、Favoriteに追加します"
 read -p "エディタ(gedit)の背景を白にし、Favoriteに追加します"
 read -p "FirefoxとChromeをFavoriteに追加します"
+read -p "Chromeの起動オプションに--no-sandboxを追加します"
+read -p "default applicationにFirefoxを指定します"
 read -p "Settings>Power Manger>Securityタブからスクリーンセーバーを非有効化します"
-read -p "Firefoxのブラウザアドオンを導入します Web Developer/Tamper Data/Foxy Proxy/User Agent Switcher/Wappalyzer"
+read -p "Firefoxのブラウザアドオンを導入します Foxy Proxy/Wappalyzer"
 read -p "Burpの証明書をFirefoxに設定します"
 read -p "Github、TryHackMeのログイン情報を登録します"
 
