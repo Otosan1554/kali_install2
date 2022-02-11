@@ -15,6 +15,12 @@ sudo apt-get install fonts-vlgothic
 echo "kazamの導入"
 apt install kazam
 
+echo "pure-ftpdの導入"
+apt -y install pure-ftpd
+echo "no" > /etc/pure-ftpd/conf/NoAnonymous
+echo "no" > /etc/pure-ftpd/conf/PAMAuthentication
+#systemctl start pure-ftpd
+
 echo "xfreedpの導入"
 apt install freerdp2-x11 freerdp2-shadow-x11
 
