@@ -82,6 +82,9 @@ echo "impacketの導入"
 python2 -m pip install impacket
 pip install impacket
 
+echo "python3-impacketの導入"
+apt install python3-impacket
+
 echo "Autoreconの導入"
 pip3 install git+https://github.com/Tib3rius/AutoRecon.git
 
