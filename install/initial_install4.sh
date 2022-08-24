@@ -49,18 +49,8 @@ chmod 777 udpscan.sh
 rm memo
 wget https://raw.githubusercontent.com/Otosan1554/kali_conf/main/tools/memo
 
-#echo "BeRootの導入"
-#cd /var/www/html/windows-script
-#wget https://github.com/AlessandroZ/BeRoot/blob/master/Linux/beroot.py
-#chmod 777 beroot.py
-
 echo "Empireの導入"
-cd /root/tools
-rm -R Empire
-git clone https://github.com/EmpireProject/Empire.git
-apt-get install libssl-dev swig python3-dev gcc
-cd /Empire/setup
-./install.sh
+apt-get install powershell-empire starkiller -y
 
 echo "Windows exoloit suggester-NGの導入"
 cd /root/tools
@@ -71,21 +61,6 @@ echo "Windows exoloit suggesterの導入"
 cd /root/tools
 rm -R Windows-Exploit-Suggester
 git clone https://github.com/AonCyberLabs/Windows-Exploit-Suggester.git
-
-echo "onetwopunchの導入"
-rm /root/onetwopunch.sh
-cd /root
-git clone https://github.com/superkojiman/onetwopunch
-cp /root/onetwopunch/onetwopunch.sh /root/tools/onetwopunch.sh
-rm -r /root/onetwopunch
-sudo chmod 777 /root/tools/onetwopunch.sh
-
-echo "bruteforce-http-authの導入"
-cd /root/tools
-rm -R bruteforce-http-auth
-git clone https://github.com/erforschr/bruteforce-http-auth.git
-cd bruteforce-http-auth
-python3 -m pip install -r requirements.txt
 
 echo "Heartbleed exploitの導入"
 cd /root/tools
@@ -102,11 +77,6 @@ echo "CMSmapの導入"
 rm -R /root/tools/CMSmap
 cd /root/tools
 git clone https://github.com/Dionach/CMSmap
-
-echo "Easy-Pの導入"
-cd /root/tools
-rm -R /root/tools/Easy-P
-git clone https://github.com/cheetz/Easy-P.git /root/tools/Easy-P
 
 echo "hash-id.pyの導入"
 cd /root/tools
