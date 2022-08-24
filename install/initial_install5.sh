@@ -137,3 +137,15 @@ rm php_webshell_examples
 
 wget https://raw.githubusercontent.com/Otosan1554/kali_conf/main/webshell/backdoor.php
 wget https://raw.githubusercontent.com/Otosan1554/kali_conf/main/webshell/php_webshell_examples
+
+
+
+
+echo "次のブラウザアドオンを導入します"
+echo "Web Developerアドオン"
+echo "Tamper Data"
+echo "Foxy Proxy"
+echo "User Agent Switcher"
+echo "Wappalyzer"
+echo "builtwith"
+
