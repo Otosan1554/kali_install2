@@ -145,9 +145,6 @@ chmod 777 pimpmykali.sh
 read -p "select N, Y, Y, Y"
 ./pimpmykali.sh
 
-
-
-
 echo "次のブラウザアドオンを導入します"
 echo "Web Developerアドオン"
 echo "Tamper Data"
