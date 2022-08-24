@@ -26,9 +26,6 @@ echo "no" > /etc/pure-ftpd/conf/PAMAuthentication
 echo "xfreedpの導入"
 apt install freerdp2-x11 freerdp2-shadow-x11
 
-echo "BackdoorFactoryの導入"
-apt install backdoor-factory
-
 echo "Metasploitの初期設定"
 sudo systemctl start postgresql
 echo "PostGreSQLの起動確認"
@@ -70,21 +67,6 @@ sudo systemctl disable ssh
 echo "niktoの導入"
 apt install nikto
 
-echo "pipの導入"
-cd /tmp
-rm get-pip.py
-curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
-python2 get-pip.py
-pip2 install --upgrade setuptools 
-apt install python3-pip
-
-echo "impacketの導入"
-python2 -m pip install impacket
-pip install impacket
-
-echo "python3-impacketの導入"
-apt install python3-impacket
-
 echo "Autoreconの導入"
 pip3 install git+https://github.com/Tib3rius/AutoRecon.git
 
@@ -92,9 +74,6 @@ read -p "いったん確認"
 
 echo "exifの導入"
 sudo apt install exif
-
-echo "parseroの導入"
-apt install parsero
 
 read -p "いったん確認"
 
@@ -112,9 +91,6 @@ apt install gobuster
 
 echo "ffufの導入"
 apt install ffuf
-
-echo "terminaorの導入"
-apt install terminator
 
 echo "straceの導入"
 apt install strace
@@ -139,8 +115,3 @@ gunzip /usr/share/wordlists/rockyou.txt.gz
 
 echo "seclistsの導入"
 sudo apt-get install seclists
-
-#echo "OpenVASのインストールと起動"
-#apt install -y gvm 
-#gvm-setup
-#gvm-start
