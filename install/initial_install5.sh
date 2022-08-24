@@ -11,12 +11,10 @@ cd /var/www/html/linux-script
 wget https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh  
 chmod 777 LinEnum.sh
 
-echo "LinPEASの導入"
-read -p "次のページからlinpeasをダウンロードします(複数)"
-xdg-open https://github.com/carlospolop/PEASS-ng/releases/tag/refs/pull/260/merge
-read -p "mv /root/Downloads/winPEAS* /var/www/html/windows-script/"
-mv /root/Downloads/linpeas* /var/www/html/linux-script/
-chmod 777 /var/www/html/linux-script/linpeas*
+echo "PEASSの導入"
+apt install peass
+mkdir /var/www/html/linux-script/linpeas
+mv /usr/share/peass/linpeas /var/www/html/linux-script/linpeas
 
 echo "linux exoloit suggester 2の導入"
 cd /var/www/html/linux-script
@@ -39,21 +37,12 @@ wget https://raw.githubusercontent.com/pentestmonkey/unix-privesc-check/1_x/unix
 mv unix-privesc-check unix-privesc-check.sh
 chmod 777 unix-privesc-check.sh
 
-echo "Linux Scriptの導入"
-cd /var/www/html/linux-script
-wget https://raw.githubusercontent.com/Otosan1554/kali_conf/main/linux-script/script_linux.sh
-chmod 777 script_linux.sh
-
 echo "windows-scriptディレクトリの作成"
 rm -R /var/www/html/windows-script
 mkdir /var/www/html/windows-script
 
-echo "winPEAS（winPEASx64.exe/winPEASx86.exe/winPEASany.exe）を導入します"
-read -p "次のページからwinPEASをダウンロードします（複数）"
-#read -p "xdg-open https://github.com/carlospolop/PEASS-ng/releases/tag/refs/pull/260/merge"
-xdg-open https://github.com/carlospolop/PEASS-ng/releases/tag/refs/pull/260/merge
-read -p "mv /root/Downloads/winPEAS* /var/www/html/windows-script/"
-mv /root/Downloads/winPEAS* /var/www/html/windows-script/
+mkdir /var/www/html/windows-script/winpeas
+mv /usr/share/peass/winpeas /var/www/html/linux-script/winpeas
 
 echo "windows-privsesc-checkを導入します"
 read -p "次のページからwindows-privesc-check2.exeをダウンロードします"
@@ -61,20 +50,6 @@ read -p "次のページからwindows-privesc-check2.exeをダウンロードし
 xdg-open https://github.com/pentestmonkey/windows-privesc-check/blob/master/windows-privesc-check2.exe
 read -p "mv /root/Downloads/windows-privesc-check2.exe /var/www/html/windows-script/"
 mv /root/Downloads/windows-privesc-check2.exe /var/www/html/windows-script/
-
-echo "Seatbelt.exeの導入"
-read -p "次のページからSeatbelt.exeをダウンロードします"
-#read -p "xdg-open https://github.com/r3motecontrol/Ghostpack-CompiledBinaries/blob/master/Seatbelt.exe"
-xdg-open https://github.com/r3motecontrol/Ghostpack-CompiledBinaries/blob/master/Seatbelt.exe
-read -p "mv /root/Downloads/Seatbelt.exe /var/www/html/windows-script/"
-mv /root/Downloads/Seatbelt.exe /var/www/html/windows-script/
-
-echo "SharpUp.exeの導入"
-read -p "次のページからSharpUp.exeをダウンロードします"
-#read -p "xdg-open https://github.com/r3motecontrol/Ghostpack-CompiledBinaries/blob/master/SharpUp.exe"
-xdg-open https://github.com/r3motecontrol/Ghostpack-CompiledBinaries/blob/master/SharpUp.exe
-read -p "mv /root/Downloads/SharpUp.exe /var/www/html/windows-script/"
-mv /root/Downloads/SharpUp.exe /var/www/html/windows-script/
 
 echo "accesschk.exeの導入"
 read -p "次のページからAccessChkをダウンロードします"
@@ -111,10 +86,6 @@ echo "hijackdll.cの導入"
 cd /var/www/html/windows-script
 rm hijackdll.c
 wget https://github.com/Otosan1554/kali_conf/blob/main/windows-script/hijackdll.c
-
-echo "JAWSの導入"
-cd /var/www/html/windows-script
-wget https://raw.githubusercontent.com/411Hall/JAWS/master/jaws-enum.ps1
 
 echo "var/www/html配下を作成"
 
