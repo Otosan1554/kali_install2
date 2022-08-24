@@ -6,6 +6,13 @@ read -p "アンチウィルスを停止しましたか？"
 echo "ソースリストの更新"
 sudo apt -y update 
 
+cd /tmp
+git clone https://github.com/Dewalt-arch/pimpmykali.git
+cd pimpmykali
+chmod 777 pimpmykali.sh
+read -p "select N, Y, Y, Y"
+./pimpmykali.sh
+
 echo "chromeの導入"
 cd /tmp
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
