@@ -137,19 +137,3 @@ rm php_webshell_examples
 
 wget https://raw.githubusercontent.com/Otosan1554/kali_conf/main/webshell/backdoor.php
 wget https://raw.githubusercontent.com/Otosan1554/kali_conf/main/webshell/php_webshell_examples
-
-cd /tmp
-git clone https://github.com/Dewalt-arch/pimpmykali.git
-cd pimpmykali
-chmod 777 pimpmykali.sh
-read -p "select N, Y, Y, Y"
-./pimpmykali.sh
-
-echo "次のブラウザアドオンを導入します"
-echo "Web Developerアドオン"
-echo "Tamper Data"
-echo "Foxy Proxy"
-echo "User Agent Switcher"
-echo "Wappalyzer"
-echo "builtwith"
-
