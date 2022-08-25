@@ -15,17 +15,17 @@ sudo apt-get install fonts-vlgothic
 echo "kazamの導入"
 apt install kazam
 
-echo "davtestの導入"
-apt install davtest
+#echo "davtestの導入"
+#apt install davtest
 
-echo "cadaverの導入"
-apt install cadaver
+#echo "cadaverの導入"
+#apt install cadaver
 
-echo "crackmapexecの導入"
-apt install crackmapexec
+#echo "crackmapexecの導入"
+#apt install crackmapexec
 
-echo "evil-winrmの導入"
-apt install evil-winrm
+#echo "evil-winrmの導入"
+#apt install evil-winrm
 
 echo "pure-ftpdの導入"
 apt -y install pure-ftpd
@@ -35,8 +35,8 @@ echo "no" > /etc/pure-ftpd/conf/NoAnonymous
 echo "no" > /etc/pure-ftpd/conf/PAMAuthentication
 #systemctl start pure-ftpd
 
-echo "xfreedpの導入"
-apt install freerdp2-x11 freerdp2-shadow-x11
+#echo "xfreedpの導入"
+#apt install freerdp2-x11 freerdp2-shadow-x11
 
 echo "Metasploitの初期設定"
 sudo systemctl start postgresql
@@ -49,8 +49,8 @@ sudo searchsploit -u
 echo "Apacheをdisableにする"
 sudo systemctl disable apache2
 
-echo "VNC Viewerのインストール"
-sudo apt-get install tigervnc-viewer
+#echo "VNC Viewerのインストール"
+#sudo apt-get install tigervnc-viewer
 
 echo "Crowberのインストール"
 sudo apt install crowbar
@@ -76,8 +76,8 @@ echo "sshサーバの自動起動設定"
 sudo systemctl start ssh.service
 sudo systemctl disable ssh
 
-echo "niktoの導入"
-apt install nikto
+#echo "niktoの導入"
+#apt install nikto
 
 echo "Autoreconの導入"
 pip3 install git+https://github.com/Tib3rius/AutoRecon.git
@@ -95,14 +95,14 @@ apt install veil
 echo "nishangの導入"
 apt install nishang
 
-echo "Powersploitの導入"
-apt install powersploit
+#echo "Powersploitの導入"
+#apt install powersploit
 
 echo "gobusterの導入"
 apt install gobuster
 
-echo "ffufの導入"
-apt install ffuf
+#echo "ffufの導入"
+#apt install ffuf
 
 echo "straceの導入"
 apt install strace
@@ -125,5 +125,5 @@ apt -y install zaproxy
 echo "gunzip rockyou.txtを解凍します"
 gunzip /usr/share/wordlists/rockyou.txt.gz
 
-echo "seclistsの導入"
-sudo apt-get install seclists
+#echo "seclistsの導入"
+#sudo apt-get install seclists
