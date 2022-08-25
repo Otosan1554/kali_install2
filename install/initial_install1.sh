@@ -18,8 +18,8 @@ read -p "select N, Y, Y, Y"
 #wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 #apt install ./google-chrome-stable_current_amd64.deb
 
-echo "geditの導入"
-apt install gedit
+#echo "geditの導入"
+#apt install gedit
 
 read -p "kali/kaliにログインします"
 read -p "sudo passwd root します"
