@@ -13,10 +13,10 @@ chmod 777 pimpmykali.sh
 read -p "select N, Y, Y, Y"
 ./pimpmykali.sh
 
-echo "chromeの導入"
-cd /tmp
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-apt install ./google-chrome-stable_current_amd64.deb
+#echo "chromeの導入"
+#cd /tmp
+#wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+#apt install ./google-chrome-stable_current_amd64.deb
 
 echo "geditの導入"
 apt install gedit
