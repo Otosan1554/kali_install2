@@ -15,6 +15,18 @@ sudo apt-get install fonts-vlgothic
 echo "kazamの導入"
 apt install kazam
 
+echo "davtestの導入"
+apt install davtest
+
+echo "cadaverの導入"
+apt install cadaver
+
+echo "crackmapexecの導入"
+apt install crackmapexec
+
+echo "evil-winrmの導入"
+apt install evil-winrm
+
 echo "pure-ftpdの導入"
 apt -y install pure-ftpd
 useradd ftp
