@@ -11,7 +11,6 @@ cd /tmp
 git clone https://github.com/Dewalt-arch/pimpmykali.git
 cd pimpmykali
 chmod 777 pimpmykali.sh
-read -p "select N, Y, Y, Y"
 ./pimpmykali.sh
 
 read -p "キーボードに日本語を選択します"
