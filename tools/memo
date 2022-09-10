@@ -1,4 +1,6 @@
 
+ffuf -s -w /usr/share/seclists/Discovery/Web-Content/common.txt -mc 200,204,301,302,307,401,403,405 -t 40 -e .htm,.shtml,.php,.html,.js,.txt,.zip,.bak,.asp,.aspx,.xml -u http://x.x.x.x/FUZZ
+
 Linux Script Download
 
 cd /var/www/html
