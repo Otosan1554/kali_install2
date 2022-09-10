@@ -51,6 +51,7 @@ wget https://raw.githubusercontent.com/Otosan1554/kali_conf/main/tools/memo
 
 echo "Empireの導入"
 apt-get install powershell-empire starkiller -y
+export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
 
 echo "Windows exoloit suggester-NGの導入"
 cd /root/tools
