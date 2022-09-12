@@ -15,6 +15,9 @@ sudo apt-get install fonts-vlgothic
 echo "kazamの導入"
 apt install kazam
 
+echo "httpieの導入"
+apt install httpie
+
 #echo "davtestの導入"
 #apt install davtest
 
